@@ -1630,12 +1630,6 @@ public class XU2Entries {
 			CraftingHelper.addRecipe(new AnvilRecipe(CraftingHelper.createLocation("transfer_flatnode_fluids"), newStack(8, 1), "a", " ", "n", 'a', Blocks.ANVIL, 'n', grocket.newStack(1, GrocketType.TRANSFER_NODE_FLUIDS.ordinal())));
 		}
 	};
-	public static BlockClassEntry<BlockAnalogCrafter> analogCrafter = new BlockClassEntry<BlockAnalogCrafter>(BlockAnalogCrafter.class, TileAnalogCrafter.class) {
-		@Override
-		public void addRecipes() {
-			addShapeless("crafter_analog", newStack(), Blocks.CRAFTING_TABLE, CHEST_WOOD, Blocks.LEVER);
-		}
-	};
 	public static BlockClassEntry<BlockDecorativeBedrock> decorativeBedrock = new BlockClassEntry<BlockDecorativeBedrock>(BlockDecorativeBedrock.class) {
 		@Override
 		public void addRecipes() {
