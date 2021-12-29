@@ -252,51 +252,6 @@ public class BlockSpike extends XUBlockStatic {
 			public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 				tooltip.add(Lang.translate("Mobs drop 'Player-kill only' items"));
 			}
-		},
-		creative(Material.ROCK, 8000, null, null, null) {
-			{
-				MinecraftForge.EVENT_BUS.register(EventHandler.class);
-			}
-
-			@Override
-			public void hurtEntity(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase entityIn) {
-//				boolean weTemporarilySetKeepInventoryToTrue;
-//
-//				if (entityIn instanceof EntityPlayer &&
-//						!worldIn.getGameRules().getBoolean("keepInventory")) {
-//					weTemporarilySetKeepInventoryToTrue = true;
-//					worldIn.getGameRules().setOrCreateGameRule("keepInventory", "true");
-//
-//				} else weTemporarilySetKeepInventoryToTrue = false;
-
-				EventHandler.entitiesToKillDrops.add(entityIn);
-				for (int i = 0; i < 100; i++) {
-					if (!entityIn.attackEntityFrom(spike_creative, amount))
-						break;
-				}
-				EventHandler.entitiesToKillDrops.remove(entityIn);
-//				if (weTemporarilySetKeepInventoryToTrue) {
-//					worldIn.getGameRules().setOrCreateGameRule("keepInventory", "false");
-//				}
-
-				if (entityIn.getHealth() <= 0 && entityIn instanceof EntityLiving) {
-
-					EntityLiving entityLiving = (EntityLiving) entityIn;
-					NetworkHandler.sendToAllAround(
-							new PacketParticleSplosion(entityIn.getEntityId()),
-							entityLiving.world.provider.getDimension(),
-							entityLiving.posX,
-							entityLiving.posY,
-							entityLiving.posZ, 64);
-
-					entityLiving.experienceValue = 0;
-				}
-			}
-
-			@Override
-			public boolean isIgnored(Entity entityIn) {
-				return false;
-			}
 		};
 
 		public final Material material;
@@ -333,45 +288,6 @@ public class BlockSpike extends XUBlockStatic {
 
 		public boolean isIgnored(Entity entityIn) {
 			return entityIn instanceof EntityItem || entityIn instanceof EntityXPOrb;
-		}
-	}
-
-	public static class Creative extends BlockSpike {
-		public Creative() {
-			super(SpikeType.creative);
-			if(!ExtraUtils2.allowNonCreativeHarvest)
-				setBlockUnbreakable();
-			setResistance(6000000.0F);
-		}
-
-		@Override
-		public void neighborChangedBase(IBlockState state, World worldIn, BlockPos pos, Block neighborBlock) {
-			if (pos.getY() != 1) {
-				return;
-			}
-
-			if (state.getBlock() != this) {
-				return;
-			}
-			EnumFacing value = state.getValue(XUBlockStateCreator.ROTATION_ALL);
-			if (value != EnumFacing.DOWN) return;
-
-			if (worldIn.getBlockState(pos.down()).getBlock() == Blocks.BEDROCK) {
-				BlockPos up = pos.up();
-				IBlockState blockState = worldIn.getBlockState(up);
-				Block block = blockState.getBlock();
-				if (block.isAir(state, worldIn, up)) {
-					return;
-				}
-				if (block instanceof BlockLiquid || block instanceof IFluidBlock) {
-					worldIn.setBlockState(up, Blocks.AIR.getDefaultState(), 2);
-				} else {
-					worldIn.destroyBlock(up, true);
-				}
-
-
-			}
-
 		}
 	}
 

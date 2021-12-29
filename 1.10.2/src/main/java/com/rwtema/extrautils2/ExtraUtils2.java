@@ -10,9 +10,7 @@ import com.rwtema.extrautils2.backend.entries.XU2EntriesDev;
 import com.rwtema.extrautils2.backend.model.ModelHandler;
 import com.rwtema.extrautils2.backend.save.SaveManager;
 import com.rwtema.extrautils2.banner.Banner;
-import com.rwtema.extrautils2.blocks.BlockCreativeChest;
 import com.rwtema.extrautils2.book.BookHandler;
-import com.rwtema.extrautils2.chunkloading.XUChunkLoaderManager;
 import com.rwtema.extrautils2.commands.CommandDebug;
 import com.rwtema.extrautils2.commands.CommandPowerSharing;
 import com.rwtema.extrautils2.commands.CommandToggleCursedEarth;
@@ -159,7 +157,6 @@ public class ExtraUtils2 {
 
 		MinecraftForge.EVENT_BUS.register(Freq.INSTANCE);
 
-		XUChunkLoaderManager.init();
 		GameRegistry.registerWorldGenerator(SingleChunkWorldGenManager.INSTANCE, 0);
 		checkThrow();
 	}

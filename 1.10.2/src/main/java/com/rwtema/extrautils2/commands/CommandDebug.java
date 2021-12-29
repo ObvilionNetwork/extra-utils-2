@@ -3,7 +3,6 @@ package com.rwtema.extrautils2.commands;
 import com.google.common.collect.Lists;
 import com.rwtema.extrautils2.ExtraUtils2;
 import com.rwtema.extrautils2.achievements.AchievementHelper;
-import com.rwtema.extrautils2.chunkloading.XUChunkLoaderManager;
 import com.rwtema.extrautils2.power.PowerManager;
 import com.rwtema.extrautils2.utils.LogHelper;
 import gnu.trove.iterator.TObjectLongIterator;
@@ -50,9 +49,6 @@ public class CommandDebug extends CommandBase {
 		switch (t) {
 			case "power":
 				PowerManager.instance.getDebug(info);
-				break;
-			case "chunks":
-				XUChunkLoaderManager.instance.getDebug(info);
 				break;
 			case "packethandler":
 				break;

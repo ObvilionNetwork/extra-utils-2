@@ -133,13 +133,6 @@ public class BlockPassiveGenerator extends XUBlockStatic {
 		xuBlockState.getStateFromItemStack(stack).getValue(GENERATOR_TYPE).addInformation(stack, playerIn, tooltip, advanced);
 	}
 
-	@Override
-	public float getBlockHardness(IBlockState blockState, World worldIn, BlockPos pos) {
-		if (blockState == getDefaultState().withProperty(GENERATOR_TYPE, GeneratorType.CREATIVE) && !ExtraUtils2.allowCreativeBlocksToBeBroken)
-			return -1;
-		return super.getBlockHardness(blockState, worldIn, pos);
-	}
-
 	public enum GeneratorType implements IItemStackMaker, IWorldPowerMultiplier {
 		SOLAR(PowerMultipliers.SOLAR, 80, LOSS_1, 160, LOSS_2, 320, LOSS_3) {
 			@Override
@@ -403,33 +396,6 @@ public class BlockPassiveGenerator extends XUBlockStatic {
 			public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 				tooltip.add(Lang.translate("Operates when placed over fire."));
 				super.addInformation(stack, playerIn, tooltip, advanced);
-			}
-		},
-		CREATIVE(IWorldPowerMultiplier.CONSTANT) {
-			@Override
-			public void registerAchievements() {
-
-			}
-
-			@Override
-			public float getPowerLevel(TilePassiveGenerator generator, World world) {
-				return 10000;
-			}
-
-			@Override
-			@SideOnly(Side.CLIENT)
-			public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-				tooltip.add(Lang.translate("Creative-only item."));
-			}
-
-			@Override
-			public void createModel(BoxModel model, boolean isInv) {
-				model.addBoxI(0, 0, 0, 16, 16, 16, "panel_creative").setTextureSides(0, "panel_creative_top", 1, "panel_creative_top");
-			}
-
-			@Override
-			public void addRecipe() {
-
 			}
 		}, PLAYER_WIND_UP(IWorldPowerMultiplier.CONSTANT) {
 			@Override

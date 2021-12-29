@@ -46,7 +46,6 @@ public class ChunkLoaderLoginTimes extends SaveModule {
 	@SubscribeEvent
 	public void playerLogin(PlayerEvent.PlayerLoggedInEvent event) {
 		loginTimes.put(event.player.getGameProfile(), System.currentTimeMillis());
-		XUChunkLoaderManager.dirty = true;
 		markDirty();
 	}
 

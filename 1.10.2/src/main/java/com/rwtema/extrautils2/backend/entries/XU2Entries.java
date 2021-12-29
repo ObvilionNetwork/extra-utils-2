@@ -124,12 +124,6 @@ public class XU2Entries {
 			addShaped("watering_can", newStackLowestDamage(), "S  ", "SBS", " S ", 'S', Blocks.STONE, 'B', Items.BOWL);
 		}
 	};
-	public static ItemEntry<ItemDestructionWand> creativeDestructionWand = new ItemEntry<ItemDestructionWand>("ItemCreativeDestructionWand") {
-		@Override
-		public ItemDestructionWand initValue() {
-			return new ItemDestructionWand(name.toLowerCase().substring(4), name, new float[]{191 / 255F, 75 / 255F, 244 / 255F}, 49);
-		}
-	};
 	public static ItemEntry<ItemUnstableIngots> unstableIngots = new ItemClassEntry<ItemUnstableIngots>(ItemUnstableIngots.class) {
 		@Override
 		public void loadAdditionalConfig(Configuration config) {
@@ -189,12 +183,6 @@ public class XU2Entries {
 		@Override
 		public void addRecipes() {
 			CraftingHelper.addShaped("destruction_wand", newStack(), " GG", " WG", "W  ", 'W', magical_wood, 'G', "ingotGold");
-		}
-	};
-	public static ItemEntry<ItemBuildersWand> creativeBuildersWand = new ItemEntry<ItemBuildersWand>("ItemCreativeBuildersWand") {
-		@Override
-		public ItemBuildersWand initValue() {
-			return new ItemBuildersWand(name, 49, "creativebuilderswand", new float[]{191 / 255F, 75 / 255F, 244 / 255F});
 		}
 	};
 	public static BlockClassEntry<BlockSoundMuffler> soundMuffler = new BlockClassEntry<BlockSoundMuffler>(BlockSoundMuffler.class, TileSoundMuffler.class) {
@@ -776,17 +764,6 @@ public class XU2Entries {
 		@Override
 		public void addAchievements() {
 			AchievementHelper.addAchievement("Villager Contract", "Head of Villager Soul Resources", this, goldenLasso.getOreDicMaker());
-		}
-	};
-	public static BlockClassEntry<BlockWardChunkLoader> ward_chunkloader = new BlockClassEntry<BlockWardChunkLoader>("ChunkLoader", BlockWardChunkLoader.class, TileChunkLoader.class) {
-		@Override
-		public void addRecipes() {
-			CraftingHelper.addShaped("chunk_loader", newStack(1), "SES", "SLS", " S ", 'S', "stickWood", 'E', ItemIngredients.Type.EYE_REDSTONE.newStack(1), 'L', ItemGoldenLasso.newCraftingVillagerStack(true, null));
-		}
-
-		@Override
-		public void addAchievements() {
-			AchievementHelper.addAchievement("Chunk Loader", "Persistence", this, contract);
 		}
 	};
 	public static ItemClassEntry<ItemFilterItems> filterItems = new ItemClassEntry<ItemFilterItems>("Filter", ItemFilterItems.class) {
@@ -1409,12 +1386,6 @@ public class XU2Entries {
 			BlockSpike.SpikeType.addRecipes(this);
 		}
 	};
-	public static BlockEntry<BlockSpike> spike_creative = new BlockEntry<BlockSpike>("spike_creative") {
-		@Override
-		protected BlockSpike initValue() {
-			return new BlockSpike.Creative();
-		}
-	};
 	public static BlockClassEntry<BlockRedstoneLantern> redstoneLantern = new BlockClassEntry<BlockRedstoneLantern>(BlockRedstoneLantern.class) {
 		@Override
 		public void addRecipes() {
@@ -1488,9 +1459,6 @@ public class XU2Entries {
 			}
 		}
 	};
-	public static BlockClassEntry<BlockCreativeChest> creativeChest = new BlockClassEntry<>(BlockCreativeChest.class, TileCreativeChest.class);
-	public static BlockClassEntry<BlockCreativeEnergy> creativeEnergy = new BlockClassEntry<>(BlockCreativeEnergy.class, TileCreativeEnergy.class);
-	public static BlockClassEntry<BlockCreativeHarvest> creativeHarvest = new BlockClassEntry<>(BlockCreativeHarvest.class, TileCreativeHarvest.class);
 	public static BlockClassEntry<BlockSynergy> synergyUnit = new BlockClassEntry<BlockSynergy>(BlockSynergy.class, TileSynergyUnit.class) {
 		@Override
 		public void addRecipes() {

@@ -89,8 +89,6 @@ death.attack.doom.player=%1$s met their doom whilst fighting %2$s
 death.attack.spike=%1$s walked on x pointy spike (ouchies)
 death.attack.spike.item=%1$s walked on x pointy spike (ouchies)
 death.attack.spike.player=%1$s fell on some spikes whilst fighting %2$s (ouchies)
-death.attack.spike_creative=%1$s failed to become the guy
-death.attack.spike_creative.item=%1$s failed to become the guy
 
 effect.xu2.doom=Doom
 effect.xu2.fizzy.lifting=Fizzy Lifting
