@@ -6,34 +6,24 @@ import com.rwtema.extrautils2.backend.XUBlockStateCreator;
 import com.rwtema.extrautils2.backend.entries.IItemStackMaker;
 import com.rwtema.extrautils2.backend.entries.XU2Entries;
 import com.rwtema.extrautils2.crafting.CraftingHelper;
-import com.rwtema.extrautils2.crafting.ResonatorRecipe;
-import com.rwtema.extrautils2.power.PowerManager;
 import com.rwtema.extrautils2.textures.ConnectedTexture;
 import com.rwtema.extrautils2.textures.ISolidWorldTexture;
-import com.rwtema.extrautils2.textures.TextureLocation;
 import com.rwtema.extrautils2.textures.TextureRandom;
-import com.rwtema.extrautils2.tile.TileRainbowGenerator;
 import com.rwtema.extrautils2.tile.TileResonator;
-import com.rwtema.extrautils2.utils.Lang;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
 import java.util.List;
-
-import static com.rwtema.extrautils2.tile.TileRainbowGenerator.rainbowGenerators;
 
 public class BlockDecorativeSolid extends XUBlockConnectedTextureBase {
 	public static final PropertyEnumSimple<DecorStates> decor = new PropertyEnumSimple<>(DecorStates.class);
@@ -138,48 +128,6 @@ public class BlockDecorativeSolid extends XUBlockConnectedTextureBase {
 				};
 			}
 		},
-		blue_quartz {
-			@Override
-			public void addRecipes() {
-//				TileResonator.register(new ItemStack(Blocks.LAPIS_BLOCK), newStack(1), 800);
-			}
-
-			@Nonnull
-			@Override
-			@SideOnly(Side.CLIENT)
-			public ISolidWorldTexture createTexture(XUBlockConnectedTextureBase block) {
-				return new TextureLocation("blue_quartz_thue_morse") {
-					@Override
-					protected void assignBaseTextures() {
-						for (int i = 0; i < 6; i++) {
-							int j = (i == 0 || i == 2 || i == 3) ? 2 : 0;
-							baseTexture[i] = textures[j % textures.length];
-						}
-					}
-
-					@Override
-					protected int getRandomIndex(IBlockAccess world, BlockPos pos, EnumFacing side) {
-						int i = bitSumXor(pos.getX()) ^ bitSumXor(pos.getY()) ^ bitSumXor(pos.getZ());
-
-						assignBaseTextures();
-
-						if (side == EnumFacing.DOWN || side == EnumFacing.NORTH || side == EnumFacing.SOUTH)
-							i ^= 2;
-
-						return i & (255);
-					}
-
-					public int bitSumXor(int x) {
-						int t = 0;
-						while (x != 0) {
-							t ^= x;
-							x = x >>> 1;
-						}
-						return t;
-					}
-				};
-			}
-		},
 		burnt_quartz {
 			@Override
 			public void addRecipes() {
@@ -188,35 +136,6 @@ public class BlockDecorativeSolid extends XUBlockConnectedTextureBase {
 				}
 			}
 		},
-		rainbow {
-			@Override
-			public void addRecipes() {
-				if (XU2Entries.resonator.enabled) {
-					TileResonator.register(new ResonatorRecipe(stoneburnt.newStack(1), newStack(1), 6400, false) {
-						@Override
-						public String getRequirementText() {
-							return Lang.translate("[Requires an active Rainbow Generator]");
-						}
-
-						@Override
-						public boolean shouldProgress(TileEntity resonator, int frequency, ItemStack input) {
-							PowerManager.PowerFreq freq = PowerManager.instance.getPowerFreqRaw(frequency);
-							if (freq != null) {
-								Collection<TileRainbowGenerator> s = freq.getSubTypes(rainbowGenerators);
-								if (s != null) {
-									for (TileRainbowGenerator power : s) {
-										if (power.providing) {
-											return true;
-										}
-									}
-								}
-							}
-							return false;
-						}
-					});
-				}
-			}
-		}
 //		block_evil{
 //			@Override
 //			public void addRecipes() {

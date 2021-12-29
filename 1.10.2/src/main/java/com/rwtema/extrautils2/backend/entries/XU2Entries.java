@@ -1405,35 +1405,6 @@ public class XU2Entries {
 			addShaped("mini_chest_to_chest", Blocks.CHEST, "ccc", "ccc", "ccc", 'c', this);
 		}
 	};
-	public static BlockClassEntry<BlockRainbowGenerator> rainbowGenerator = new BlockClassEntry<BlockRainbowGenerator>(BlockRainbowGenerator.class, TileRainbowGenerator.class) {
-		@Override
-		public Set<Entry<?>> getDependencies() {
-			return ImmutableSet.of(machineEntry);
-		}
-
-		@Override
-		public void addRecipes() {
-			Machine[] generators = TileRainbowGenerator.GENERATORS;
-
-			char[] chars = new char[]{'1', '2', '3', '4', '5', '6', '7', '8'};
-			ArrayList<Object> top = new ArrayList<>(ImmutableList.of("123", "4c5", "678", 'c', redstoneCrystal));
-			ArrayList<Object> bottom = new ArrayList<>(ImmutableList.of("123", "4c5", "678", 'c', redstoneCrystal));
-			for (int i = 0; i < 8; i++) {
-				top.add(chars[i]);
-				top.add(machineEntry.value.createStack(generators[i]));
-			}
-			for (int i = 8; i < 16; i++) {
-				bottom.add(chars[i - 8]);
-				bottom.add(machineEntry.value.createStack(generators[i]));
-			}
-			addShaped("rainbow_gen_bottom", newStack(1, value.getDefaultState().withProperty(BlockRainbowGenerator.PROPERTY_STATE, BlockRainbowGenerator.State.BOTTOM_HALF)), bottom.toArray());
-			addShaped("rainbow_gen_top", newStack(1, value.getDefaultState().withProperty(BlockRainbowGenerator.PROPERTY_STATE, BlockRainbowGenerator.State.TOP_HALF)), top.toArray());
-			addShapeless("rainbow_gen",
-					newStack(1, value.getDefaultState().withProperty(BlockRainbowGenerator.PROPERTY_STATE, BlockRainbowGenerator.State.FULL)),
-					newStack(1, value.getDefaultState().withProperty(BlockRainbowGenerator.PROPERTY_STATE, BlockRainbowGenerator.State.BOTTOM_HALF)), newStack(1, value.getDefaultState().withProperty(BlockRainbowGenerator.PROPERTY_STATE, BlockRainbowGenerator.State.TOP_HALF)));
-
-		}
-	};
 	public static ItemClassEntry<ItemMagicApple> magicApple = new ItemClassEntry<ItemMagicApple>(ItemMagicApple.class) {
 		@Override
 		public void addRecipes() {
@@ -1628,12 +1599,6 @@ public class XU2Entries {
 		public void addRecipes() {
 			CraftingHelper.addRecipe(new AnvilRecipe(CraftingHelper.createLocation("transfer_flatnode_items"), newStack(8, 0), "a", " ", "n", 'a', Blocks.ANVIL, 'n', grocket.newStack(1, GrocketType.TRANSFER_NODE_ITEMS.ordinal())));
 			CraftingHelper.addRecipe(new AnvilRecipe(CraftingHelper.createLocation("transfer_flatnode_fluids"), newStack(8, 1), "a", " ", "n", 'a', Blocks.ANVIL, 'n', grocket.newStack(1, GrocketType.TRANSFER_NODE_FLUIDS.ordinal())));
-		}
-	};
-	public static BlockClassEntry<BlockDecorativeBedrock> decorativeBedrock = new BlockClassEntry<BlockDecorativeBedrock>(BlockDecorativeBedrock.class) {
-		@Override
-		public void addRecipes() {
-
 		}
 	};
 	public static Entry<WorldWall> wallWorldEntry = new Entry<WorldWall>("wall_world_type") {
