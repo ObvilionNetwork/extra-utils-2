@@ -1320,12 +1320,6 @@ public class XU2Entries {
 			addShaped("lantern", newStack(), "RSR", "SCS", "RrR", 'R', "dustRedstone", 'S', decorativeSolid.isActive() ? BlockDecorativeSolid.DecorStates.stoneslab : "stone", 'C', Items.COAL, 'r', Items.COMPARATOR);
 		}
 	};
-	public static BlockClassEntry<BlockLargishChest> largistChest = new BlockClassEntry<BlockLargishChest>(BlockLargishChest.class, TileLargishChest.class) {
-		@Override
-		public void addRecipes() {
-			addShaped("largist_chest", newStack(), "sss", "scs", "sss", 'c', Blocks.CHEST, 's', Items.STICK);
-		}
-	};
 	public static ItemClassEntry<ItemMagicApple> magicApple = new ItemClassEntry<ItemMagicApple>(ItemMagicApple.class) {
 		@Override
 		public void addRecipes() {
