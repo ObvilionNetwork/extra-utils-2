@@ -714,28 +714,6 @@ public class XU2Entries {
 			CraftingHelper.addShapeless("manual", newStack(1), ImmutableList.of(new ItemStack(Items.BOOK, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.WRITABLE_BOOK, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Items.WRITTEN_BOOK, 1, OreDictionary.WILDCARD_VALUE)), "ingotGold", Blocks.OBSIDIAN);
 		}
 	};
-	//	public static VoidEntry throwEnderPearlsInCreative = new VoidEntry("throwEnderPearlsInCreative") {
-//		@Override
-//		public void postInit() {
-////			CreativeEPHandler.init();
-//		}
-//
-//		@Override
-//		public boolean isEnabledByDefault() {
-//			return false;
-//		}
-//	};
-	//	public static VoidEntry mobsSpawnInAnyLight = new VoidEntry("mobsSpawnInAnyLight"){
-//		@Override
-//		public void preInitLoad() {
-//			MobSpawnInAnyLightHandler.init();
-//		}
-//
-//		@Override
-//		public boolean isEnabledByDefault() {
-//			return false;
-//		}
-//	};
 	public static ItemClassEntry<ItemContract> contract = new ItemClassEntry<ItemContract>(ItemContract.class) {
 		@Override
 		public void addRecipes() {
@@ -1346,13 +1324,6 @@ public class XU2Entries {
 		@Override
 		public void addRecipes() {
 			addShaped("largist_chest", newStack(), "sss", "scs", "sss", 'c', Blocks.CHEST, 's', Items.STICK);
-		}
-	};
-	public static BlockClassEntry<BlockMiniChest> miniChest = new BlockClassEntry<BlockMiniChest>(BlockMiniChest.class, TileMinChest.class) {
-		@Override
-		public void addRecipes() {
-			addShapeless("mini_chest", newStack(9), Blocks.CHEST);
-			addShaped("mini_chest_to_chest", Blocks.CHEST, "ccc", "ccc", "ccc", 'c', this);
 		}
 	};
 	public static ItemClassEntry<ItemMagicApple> magicApple = new ItemClassEntry<ItemMagicApple>(ItemMagicApple.class) {
