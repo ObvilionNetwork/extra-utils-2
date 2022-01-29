@@ -41,10 +41,6 @@ public class Radar {
 	public static KeyBinding searchForItems;
 	static ItemStack lastRenderedStack = StackHelper.empty();
 
-	static {
-
-	}
-
 	@SideOnly(Side.CLIENT)
 	public static void init() {
 		searchForItems = new KeyBinding("key.xu2.searchforitems", KeyConflictContext.GUI, KeyModifier.NONE, Keyboard.KEY_T, "Extra Utilities 2");
