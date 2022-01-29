@@ -161,26 +161,8 @@ public class ItemGoldenLasso extends XUItemFlat implements ICustomRecipeMatching
 				return -1;
 		}
 	}
-//
-//	@Override
-//	@SideOnly(Side.CLIENT)
-//	public int getColorFromItemStack(ItemStack stack, int renderPass) {
-//		NBTTagCompound tags = stack.getTagCompound();
-//		if (!hasAnimal(tags))
-//			return 16777215;
-//
-//		EntityList.EntityEggInfo egg = getEgg(tags.getCompoundTag(NBT_ANIMAL));
-//		if (egg == null) return 16777215;
-//		else {
-////			if ((ColorHelper.brightness(egg.primaryColor) > ColorHelper.brightness(egg.secondaryColor)) == (renderPass == 0)) {
-//			if (renderPass == 0) {
-//				return egg.primaryColor;
-//			} else
-//				return egg.secondaryColor;
-//		}
-//	}
 
-	@Override
+    @Override
 	public boolean hasEffect(ItemStack stack) {
 		return false;
 	}
@@ -469,57 +451,13 @@ public class ItemGoldenLasso extends XUItemFlat implements ICustomRecipeMatching
 			}
 		}
 	}
-//
-//	@SubscribeEvent(priority = EventPriority.HIGHEST)
-//	public void cursedLassoAbsorb(LivingDeathEvent event) {
-//		if (!(event.getEntityLiving() instanceof IMob) || (!event.getEntityLiving().isNonBoss())) return;
-//		Entity source = event.getSource().getEntity();
-//		if (!(source instanceof EntityPlayerMP)) return;
-//		EntityPlayerMP player = (EntityPlayerMP) source;
-//		ItemStack cursedLasso = check(player.getHeldItem(EnumHand.OFF_HAND));
-//
-//		if (cursedLasso == null)
-//			for (int i = 0; cursedLasso == null && i < player.inventory.getSizeInventory(); i++) {
-//				cursedLasso = check(player.inventory.getStackInSlot(i));
-//			}
-//
-//		if (cursedLasso == null) return;
-//
-//		if (!addTargetToLasso(cursedLasso, event.getEntityLiving())) return;
-//
-//		setNoPlace(cursedLasso);
-//
-////		event.setCanceled(true);
-//
-//		player.sendMessage(Lang.chat("%s absorbed into cursed lasso", event.getEntityLiving().getDisplayName()));
-//	}
 
-	@Override
+    @Override
 	public void getSubItemsBase(@Nonnull Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
 		subItems.add(new ItemStack(itemIn, 1, 0));
 		subItems.add(new ItemStack(itemIn, 1, 1));
 
-//		try {
-//			WorldClient theWorld = Minecraft.getMinecraft().world;
-//			if (theWorld != null)
-//				for (Map.Entry<String, Class<? extends Entity>> entry : EntityList.stringToClassMapping.entrySet()) {
-//					Entity entity = EntityList.createEntityByName(entry.getKey(), theWorld);
-//					if (entity instanceof EntityLivingBase) {
-//						int meta = IMob.class.isAssignableFrom(entry.getValue()) ? 1 : 0;
-//						ItemStack stack = new ItemStack(itemIn, 1, meta);
-//						NBTTagCompound tag = NBTHelper.getOrInitTagCompound(NBTHelper.getOrInitTagCompound(stack), NBT_ANIMAL);
-//						if (!entity.writeMountToNBT(tag)) {
-//							entity.setDead();
-//							continue;
-//						}
-//						entity.setDead();
-//						subItems.add(stack);
-//					}
-//				}
-//		} catch (Throwable err) {
-//			err.printStackTrace();
-//		}
-	}
+    }
 
 	public ItemStack check(ItemStack stack) {
 		return StackHelper.isNull(stack) || stack.getItem() != this || stack.getItemDamage() != 1 || hasAnimal(stack) ? null : stack;

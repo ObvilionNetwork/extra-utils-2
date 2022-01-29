@@ -3,7 +3,6 @@ package com.rwtema.extrautils2.blocks;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.realmsclient.gui.ChatFormatting;
-import com.rwtema.extrautils2.ExtraUtils2;
 import com.rwtema.extrautils2.achievements.AchievementHelper;
 import com.rwtema.extrautils2.backend.PropertyEnumSimple;
 import com.rwtema.extrautils2.backend.XUBlockStateCreator;
@@ -445,10 +444,6 @@ public class BlockPassiveGenerator extends XUBlockStatic {
 				return 500;
 			}
 
-			//			@Override
-//			public float getCap() {
-//				return 500;
-//			}
 			@Override
 			public float basePowerGen() {
 				return 500;
@@ -526,7 +521,7 @@ public class BlockPassiveGenerator extends XUBlockStatic {
 				tooltip.add(Lang.translateArgs("Power Given: %s GP", basePowerGen()));
 			}
 			if (caps != null) {
-				String reset = ChatFormatting.RESET.toString() + ChatFormatting.GRAY.toString();
+				String reset = ChatFormatting.RESET.toString() + ChatFormatting.GRAY;
 				String tab = "   ";
 				if (!(Keyboard.isKeyDown(42) || Keyboard.isKeyDown(54))) {
 					ChatFormatting col = ChatFormatting.DARK_GRAY;

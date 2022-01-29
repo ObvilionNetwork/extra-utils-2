@@ -72,13 +72,7 @@ public class TileInteractionProxy extends TilePower implements ITickable, IRemot
 			CompatHelper.notifyNeighbours(world, pos, getBlockType());
 			markDirty();
 			power.value = Math.abs(currentPos.getX()) + Math.abs(currentPos.getY()) + Math.abs(currentPos.getZ());
-//			((WorldServer) world).spawnParticle(EnumParticleTypes.REDSTONE,
-//					getPos().getX() + currentPos.getX() + 0.5,
-//					getPos().getY() + currentPos.getY() + 0.5,
-//					getPos().getZ() + currentPos.getZ() + 0.5,
-//					1, 3 / 255.0, 38 / 255.0, 32 / 255.0, 0.0D);
-//			onSuccessfulInteract(world,getPos().add( currentPos), EnumFacing.DOWN, true);
-		}
+        }
 	}
 
 	@Override

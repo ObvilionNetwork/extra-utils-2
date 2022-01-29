@@ -4,8 +4,6 @@ import com.rwtema.extrautils2.utils.datastructures.WeakLinkedSet;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-import java.util.Iterator;
-
 public class TileLoaderManager {
 	private static final WeakLinkedSet<XUTile> loadingTiles = new WeakLinkedSet<>();
 

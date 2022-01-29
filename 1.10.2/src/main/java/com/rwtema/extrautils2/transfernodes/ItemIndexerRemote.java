@@ -30,11 +30,8 @@ public class ItemIndexerRemote extends XUItemFlatMetadata implements IDynamicHan
 	@Nonnull
 	@Override
 	public EnumActionResult onItemUseBase(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-//		if (stack.hasTagCompound() && Validate.notNull(stack.getTagCompound()).hasKey("BlockPos", Constants.NBT.TAG_COMPOUND)) {
-//			return EnumActionResult.FAIL;
-//		}
 
-		if (worldIn.isRemote)
+        if (worldIn.isRemote)
 			return worldIn.getTileEntity(pos) instanceof TileIndexer ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
 
 		TileEntity entity = worldIn.getTileEntity(pos);

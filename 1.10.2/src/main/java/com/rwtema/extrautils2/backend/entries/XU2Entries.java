@@ -63,7 +63,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.ContainerWorkbench;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionType;
@@ -423,10 +422,7 @@ public class XU2Entries {
 
 		@Override
 		public void postInit() {
-//			if (blockEnderLilly.enabled) {
-//				BlockEnderLilly.end_stone_states.add(value.getDefaultState().withProperty(BlockDecorativeSolid.decor, BlockDecorativeSolid.DecorStates.endstone));
-//			}
-		}
+        }
 	};
 	public static ItemClassEntry<ItemIngredients> itemIngredients = new ItemClassEntry<ItemIngredients>(ItemIngredients.class) {
 		@Override
@@ -449,10 +445,7 @@ public class XU2Entries {
 			for (ItemIngredients.Type type : ItemIngredients.Type.values()) {
 				type.addAchievement();
 			}
-//			AchievementHelper.addAchievement("Tech-Tree Start", "See achievements list for Extra Utilities 2 power tech tree", redstoneCrystal, null);
-//			AchievementHelper.addAchievement("Dye of the Moon", "The moons power beckons!", ItemIngredients.Type.DYE_POWDER_LUNAR, stoneburnt);
-//			AchievementHelper.addAchievement("Powered Coal", "Boosts coals power by " + ItemIngredients.RED_COAL_MULTIPLIER + "x", ItemIngredients.Type.RED_COAL, XU2Entries.resonator);
-		}
+        }
 
 		@Override
 		public void addRecipes() {
@@ -622,16 +615,6 @@ public class XU2Entries {
 			return pipe.getConfigLabel();
 		}
 	}.setItemClass(null);
-	public static BlockClassEntry<BlockPlayerChest> playerChest = new BlockClassEntry<BlockPlayerChest>(BlockPlayerChest.class, TilePlayerChest.class) {
-		@Override
-		public void addRecipes() {
-			addShaped("player_chest", value, "SSS", "SCS",
-					"ScS", 'S',
-					stoneburnt, 'C',
-					Blocks.ENDER_CHEST, 'c',
-					redstoneCrystal);
-		}
-	};
 	public static ItemClassEntry<ItemWrench> wrench = new ItemClassEntry<ItemWrench>(ItemWrench.class) {
 		@Override
 		public void addAchievements() {
@@ -657,25 +640,7 @@ public class XU2Entries {
 		@Override
 		public void addRecipes() {
 			addShaped("boomerang", newStack(1), " W ", "W W", 'W', magical_wood);
-//			CraftingHelper.addRecipe(new AdvShapelessRecipeBase(newStack()) {
-//
-//
-//				final String boomerang = addMatcher("boomerang", newStack());
-//				final String potion = addMatcher("lingering_potion", t -> StackHelper.isNonNull(t) && t.getItem() == Items.LINGERING_POTION && !PotionUtils.getEffectsFromStack(t).isEmpty(),
-//						new ItemStack(Items.LINGERING_POTION)
-//				);
-//
-//				@Override
-//				protected ItemStack getResult(HashMap<String, ItemStack> map) {
-//					ItemStack boomerang_stack = map.get(this.boomerang);
-//					ItemStack newStack = boomerang_stack.copy();
-//					ItemStack potion = map.get(this.potion);
-//					PotionUtils.addPotionToItemStack(newStack, PotionUtils.getPotionFromItem(potion));
-//					PotionUtils.appendEffects(newStack, PotionUtils.getFullEffectsFromItem(potion));
-//					return newStack;
-//				}
-//			});
-		}
+        }
 
 		@Override
 		public void postInit() {
@@ -740,17 +705,6 @@ public class XU2Entries {
 	public static final String CHEST_WOOD = OreDicHelper.extendVanillaOres("chestWood",
 			new ItemStack(Blocks.CHEST),
 			new ItemStack(Blocks.TRAPPED_CHEST));
-	//	public static BlockClassEntry<BlockEvil> evilBlock = new BlockClassEntry<BlockEvil>(BlockEvil.class, TileEvil.class) {
-//		@Override
-//		public void addRecipes() {
-//
-//		}
-//
-//		@Override
-//		public void addAchievements() {
-//
-//		}
-//	};
 	public static ItemClassEntry<ItemGrocket> grocket = new ItemClassEntry<ItemGrocket>(ItemGrocket.class) {
 		@Override
 		public void addRecipes() {

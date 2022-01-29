@@ -125,13 +125,7 @@ public class JEIResonatorHandler extends BlankRecipeCategory<JEIResonatorHandler
 			ingredients.setOutput(ItemStack.class, IResonatorRecipe.getOutput());
 		}
 
-//			@Override
-//			public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight) {
-//				int stringWidth = minecraft.fontRenderer.getStringWidth(energyString);
-//				minecraft.fontRenderer.drawSplitString(energyString, Math.max(slotX0, (recipeWidth - stringWidth) / 2), (18 - 9) / 2, BETWEEN_DIST, Color.gray.getRGB());
-//			}
-
-		@Override
+        @Override
 		public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
 			int stringWidth = minecraft.fontRenderer.getStringWidth(energyString);
 			minecraft.fontRenderer.drawSplitString(energyString, Math.max(slotX0, (recipeWidth - stringWidth) / 2), (18 - 9) / 2, BETWEEN_DIST, Color.gray.getRGB());

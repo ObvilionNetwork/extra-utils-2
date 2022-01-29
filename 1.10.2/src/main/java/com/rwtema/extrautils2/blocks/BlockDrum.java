@@ -46,15 +46,6 @@ public class BlockDrum extends XUBlockStatic {
 		for (int i = 0; i < xuBlockState.dropmeta2state.length; i++) {
 			ItemStack emptyStack = new ItemStack(itemIn, 1, i);
 			list.add(emptyStack);
-//			int capacity = xuBlockState.dropmeta2state[i].getValue(PROPERTY_CAPACITY).capacity;
-//			for (Fluid fluid : FluidRegistry.getRegisteredFluids().values()) {
-//				ItemStack copy = emptyStack.copy();
-//				NBTTagCompound tankNBT = new NBTTagCompound();
-//				FluidStack fluidStack = new FluidStack(fluid, capacity * 1000);
-//				fluidStack.writeToNBT(tankNBT);
-//				copy.setTagInfo("Fluid", tankNBT);
-//				list.add(copy);
-//			}
 		}
 	}
 
@@ -135,9 +126,9 @@ public class BlockDrum extends XUBlockStatic {
 
 		BoxModel model = new BoxModel();
 		final int n = 8;
-		float t[] = new float[n];
-		float x[] = new float[n];
-		float z[] = new float[n];
+		float[] t = new float[n];
+		float[] x = new float[n];
+		float[] z = new float[n];
 		for (int i = 0; i < n; i++) {
 			double angle1 = ((0.5 + i) / (float) (n)) * 2 * Math.PI;
 			x[i] = 0.5F + capacity.getWidth() * (float) Math.cos(angle1);

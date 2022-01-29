@@ -370,13 +370,7 @@ public abstract class DynamicContainer extends Container {
 		return itemstack;
 	}
 
-//	@SuppressWarnings("unchecked")
-//	@ContainerSectionCallback
-//	public Map<ContainerSection, List<Slot>> getSlots() {
-//		return InventoryTweaksHelper.getSlots(this, false);
-//	}
-
-	@Override
+    @Override
 	protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
 		boolean flag = false;
 
@@ -505,11 +499,7 @@ public abstract class DynamicContainer extends Container {
 	public void onSlotChanged(int index) {
 //		Slot slot = inventorySlots.get(index);
 		inventoryItemStacks.set(index, genericItemStack);
-//		for (EntityPlayerMP playerMP : entityPlayerMPs) {
-//			playerMP.sendSlotContents(this, index, slot.createStack());
-//			playerMP.updateHeldItem();
-//		}
-	}
+    }
 
 	@SideOnly(Side.CLIENT)
 	public void loadGuiDimensions(DynamicGui dynamicGui) {

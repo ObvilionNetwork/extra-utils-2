@@ -95,14 +95,7 @@ public class Radar {
 
 		}
 
-//		if (!itemListOverlay.getVisibleStacks().isEmpty()) {
-//			ItemStack stackUnderMouse = itemListOverlay.getStackUnderMouse();
-//			if (StackHelper.isNonNull(stackUnderMouse)) {
-//				return stackUnderMouse;
-//			}
-//		}
-
-		return lastRenderedStack;
+        return lastRenderedStack;
 	}
 
 	@NetworkHandler.XUPacket

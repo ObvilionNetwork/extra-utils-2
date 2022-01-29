@@ -5,19 +5,14 @@ import com.rwtema.extrautils2.ExtraUtils2;
 import com.rwtema.extrautils2.backend.ClientRunnable;
 import com.rwtema.extrautils2.compatibility.CompatHelper;
 import com.rwtema.extrautils2.entity.chunkdata.EntityChunkData;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagByte;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagLong;
 import net.minecraft.network.datasync.DataSerializer;
 import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -93,14 +88,6 @@ public class XUEntityManager {
 		if (name.startsWith("entity")) name = name.replace("entity", "");
 		CompatHelper.registerEntity(clazz, trackingRange, updateFrequency, sendsVelocityUpdates, name, id);
 		id++;
-	}
-
-	public static void readEntityDataManagersFromNBT(EntityDataManager watcher, NBTTagCompound tags) {
-
-	}
-
-	public static void writeEntityDataManagersToNBT(EntityDataManager watcher, NBTTagCompound tags) {
-
 	}
 
 	private interface NBT<T, K extends NBTBase> {

@@ -219,11 +219,7 @@ public class TransferNodeItem extends TransferNodeBase<IItemHandler> implements 
 					@ItemStackNonNull
 					public ItemStack extractItem(int slot, int amount, boolean simulate) {
 						return StackHelper.empty();
-//						ItemStack itemStack = handler.extractItem(slot, amount, true);
-//						if (itemStack == null || !filter.matches(itemStack)) return null;
-//						if (simulate) return itemStack;
-//						return handler.extractItem(slot, amount, false);
-					}
+                    }
 				};
 		}
 

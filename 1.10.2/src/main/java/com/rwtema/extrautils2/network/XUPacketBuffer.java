@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 public class XUPacketBuffer {
@@ -200,7 +201,7 @@ public class XUPacketBuffer {
 		if (string == null) {
 			data.writeByte(0);
 		} else {
-			byte[] stringData = string.getBytes(Charset.forName("UTF-8"));
+			byte[] stringData = string.getBytes(StandardCharsets.UTF_8);
 			data.writeByte(stringData.length);
 			data.writeBytes(stringData);
 		}
@@ -213,7 +214,7 @@ public class XUPacketBuffer {
 		byte[] bytes = new byte[length];
 
 		data.readBytes(bytes);
-		return new String(bytes, Charset.forName("UTF-8"));
+		return new String(bytes, StandardCharsets.UTF_8);
 	}
 
 
@@ -221,7 +222,7 @@ public class XUPacketBuffer {
 		if (string == null) {
 			data.writeShort(0);
 		} else {
-			byte[] stringData = string.getBytes(Charset.forName("UTF-8"));
+			byte[] stringData = string.getBytes(StandardCharsets.UTF_8);
 			data.writeShort(stringData.length);
 			data.writeBytes(stringData);
 		}
@@ -233,7 +234,7 @@ public class XUPacketBuffer {
 		byte[] bytes = new byte[length];
 
 		data.readBytes(bytes);
-		return new String(bytes, Charset.forName("UTF-8"));
+		return new String(bytes, StandardCharsets.UTF_8);
 	}
 
 	public void writeNBT(NBTTagCompound tag) {

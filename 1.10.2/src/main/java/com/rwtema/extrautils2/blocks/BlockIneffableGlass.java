@@ -56,7 +56,7 @@ public class BlockIneffableGlass extends XUBlockConnectedTextureBase {
 	@SideOnly(Side.CLIENT)
 	public void registerTextures() {
 		for (DecorStates decorState : DecorStates.values()) {
-			decorState.tex = new ConnectedTexture("strange_glass_" + decorState.toString(), xuBlockState.defaultState.withProperty(decor, decorState), BlockIneffableGlass.this);
+			decorState.tex = new ConnectedTexture("strange_glass_" + decorState, xuBlockState.defaultState.withProperty(decor, decorState), BlockIneffableGlass.this);
 		}
 	}
 
@@ -82,11 +82,6 @@ public class BlockIneffableGlass extends XUBlockConnectedTextureBase {
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
-
-//	@Override
-//	public boolean isVisuallyOpaque() {
-//		return false;
-//	}
 
 	@Override
 	public boolean isBlockNormalCube(IBlockState state) {

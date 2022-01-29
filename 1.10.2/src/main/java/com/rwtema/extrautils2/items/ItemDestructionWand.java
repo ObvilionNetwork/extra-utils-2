@@ -137,18 +137,9 @@ public class ItemDestructionWand extends ItemSelectionWand {
 		}
 		return t;
 	}
-//
-//	@Override
-//	public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state) {
-//		float t = super.getDigSpeed(stack, state);
-//		for (Item item : speedDelegates) {
-//			t = Math.max(t, item.getDigSpeed(new ItemStack(item), state));
-//		}
-//		return t;
-//	}
 
 
-	@SubscribeEvent
+    @SubscribeEvent
 	public void adjustDigSpeed(PlayerEvent.BreakSpeed event) {
 		EntityPlayer player = event.getEntityPlayer();
 		if (StackHelper.isNull(player.getHeldItemMainhand()) || player.getHeldItemMainhand().getItem() != this) return;

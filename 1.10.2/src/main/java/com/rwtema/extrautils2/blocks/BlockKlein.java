@@ -182,19 +182,6 @@ public class BlockKlein extends XUBlockTESR {
 		}
 		return model;
 	}
-
-//	public BakedQuad buildQuad(Vec3d pos0, float u0, float v0,
-//							   Vec3d pos1, float u1, float v1,
-//							   Vec3d pos2, float u2, float v2,
-//							   Vec3d pos3, float u3, float v3) {
-//		return QuadHelper.buildBoxQuad(DefaultVertexFormats.ITEM,
-//				(float) pos0.x, (float) pos0.y, (float) pos0.z, u0, v0,
-//				(float) pos1.x, (float) pos1.y, (float) pos1.z, u1, v1,
-//				(float) pos2.x, (float) pos2.y, (float) pos2.z, u2, v2,
-//				(float) pos3.x, (float) pos3.y, (float) pos3.z, u3, v3
-//		);
-//	}
-
 	interface dubFunc {
 		double apply(double a, double b);
 	}

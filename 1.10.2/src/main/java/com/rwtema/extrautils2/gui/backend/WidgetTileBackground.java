@@ -32,28 +32,7 @@ public class WidgetTileBackground extends WidgetBase {
 	@SideOnly(Side.CLIENT)
 	public void renderBackground(TextureManager manager, DynamicGui gui, int guiLeft, int guiTop) {
 
-//		GlStateManager.enableBlend();
-//		GlStateManager.disableAlpha();
-//		GlStateManager.disableTexture2D();
-//		GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
-//		GlStateManager.color(0, 0, 0, 0.2F);
-//
-//		IBakedModel model = Minecraft.getMinecraft().getBlockRendererDispatcher().getModelFromBlockState(world.getBlockState(pos), world, pos);
-//		Tessellator instance = Tessellator.getInstance();
-//		VertexBuffer t = instance.getBuffer();
-//		t.begin(7, DefaultVertexFormats.POSITION);
-//
-//		renderQuads(t, model.getGeneralQuads(), guiLeft + x, guiTop + y, 0);
-//		for (EnumFacing enumFacing : EnumFacing.values()) {
-//			renderQuads(t, model.getFaceQuads(enumFacing), guiLeft + x, guiTop + y, 0);
-//		}
-//
-//		instance.draw();
-//
-//		GlStateManager.enableTexture2D();
-//		GlStateManager.enableAlpha();
-//		GlStateManager.disableBlend();
-	}
+    }
 
 	public void renderQuads(IVertexBuffer t, List<BakedQuad> quadList, float x, float y, float z) {
 		for (BakedQuad bakedQuad : quadList) {

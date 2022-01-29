@@ -35,10 +35,7 @@ public class WidgetScrollBar extends WidgetBase implements IWidgetMouseInput {
 
 	@SideOnly(Side.CLIENT)
 	public void setValues(int minValue, int maxValue) {
-//		if (minValue == this.minValue && maxValue == this.maxValue) {
-//			return;
-//		}
-		this.minValue = minValue;
+        this.minValue = minValue;
 		this.maxValue = maxValue;
 		if (minValue == maxValue) isScrolling = false;
 		reScroll();

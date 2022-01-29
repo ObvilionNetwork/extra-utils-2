@@ -1,10 +1,7 @@
 package baubles.api.cap;
 
 import baubles.api.IBauble;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 
 public class BaublesCapabilities {

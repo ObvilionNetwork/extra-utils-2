@@ -441,10 +441,7 @@ public class TileTerraformer extends TilePower implements ITickable, IDynamicHan
 						if (tile.targetBiome.isEmpty()) {
 							return Lang.translate("No biome marker.");
 						}
-//						if (range == 0) {
-//							return Lang.translate("Range is set to zero.");
-//						}
-						return Lang.translate("Searching...");
+                        return Lang.translate("Searching...");
 					}
 
 					StringBuilder builder = new StringBuilder();

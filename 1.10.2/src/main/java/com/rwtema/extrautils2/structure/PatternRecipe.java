@@ -161,12 +161,5 @@ public class PatternRecipe {
 		PatternRecipe patternRecipe = new PatternRecipe(stateStrings, mapKey, Lists.newArrayList(stacks));
 		recipeList.add(patternRecipe);
 
-//		if(ExtraUtils2.deobf_folder) {
-////			PatternDiscrimination patternDiscrimination = new PatternDiscrimination(patternRecipe);
-////			LogHelper.info(patternDiscrimination.list.stream().map(Objects::toString).collect(Collectors.joining(" ")));
-//
-//			PatternDiscrimination2 pd2 = new PatternDiscrimination2(patternRecipe);
-//
-//		}
-	}
+    }
 }

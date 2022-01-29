@@ -143,13 +143,7 @@ public abstract class ItemSelectionWand extends XUItemFlat {
 		}
 
 
-//		for (EnumFacing enumFacing : dirs2Search) {
-//			for (EnumFacing enumFacing2 : dirs2Search) {
-//				vecs.add(BlockPos.ORIGIN.offset(enumFacing).offset(enumFacing2));
-//			}
-//		}
-
-		HashSet<IBlockState> states = new HashSet<>();
+        HashSet<IBlockState> states = new HashSet<>();
 		states.add(blockState);
 		for (IBlockState otherState : block.getBlockState().getValidStates()) {
 			if (block.damageDropped(otherState) == data) {

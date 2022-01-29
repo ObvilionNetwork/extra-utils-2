@@ -106,16 +106,8 @@ public class ItemFakeCopy extends XUItem {
 	public IBakedModel createModel(int metadata) {
 		return new PassthruModelItem(this) {
 			private ModifyingBakedModel.IQuadReDesigner carboardifier = new ModifyingBakedModel.IQuadReDesigner() {
-//				public Class<?> itemLayerModelClass;
-//				{
-//					try {
-//						itemLayerModelClass = Class.forName("net.minecraftforge.client.model.ItemLayerModel$BakedItemModel");
-//					} catch (ClassNotFoundException e) {
-//						throw Throwables.propagate(e);
-//					}
-//				}
 
-				@Nonnull
+                @Nonnull
 				@Override
 				public List<BakedQuad> redesign(@Nonnull List<BakedQuad> original, IBakedModel base, IBlockState state, EnumFacing side, long rand) {
 					ArrayList<BakedQuad> list = Lists.newArrayListWithExpectedSize(original.size());
@@ -283,16 +275,6 @@ public class ItemFakeCopy extends XUItem {
 	@Override
 	public void getSubItemsBase(@Nonnull Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
 		if (showAllItems()) {
-//			Streams.stream(Item.REGISTRY.iterator())
-//					.filter(item -> item != this)
-//					.flatMap(item -> ExtraUtils2.proxy.getSubItems(item).stream())
-//					.forEach(s -> {
-//								ItemStack copy = new ItemStack(itemIn);
-//								copy.setTagInfo("Item", StackHelper.serializeSafe(s));
-//								subItems.add(copy);
-//							}
-//
-//					);
-		}
+        }
 	}
 }

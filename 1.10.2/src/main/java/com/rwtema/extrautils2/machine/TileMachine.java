@@ -971,10 +971,4 @@ public abstract class TileMachine extends TilePower implements ITickable, IDynam
 		protected abstract T deserialize(NBTTagCompound tag);
 	}
 
-//	@Override
-//	public int updateAccelerable() {
-//		trackEnergy = 0;
-//		process();
-//		return trackEnergy;
-//	}
 }

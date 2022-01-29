@@ -86,12 +86,6 @@ public class ItemLawSword extends ItemSword implements IXUItem {
 		}
 		return multimap;
 	}
-//
-//	@Override
-//	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-//		super.addInformation(stack, playerIn, tooltip, advanced);
-//		tooltip.add(Lang.translate("Cursed Sword"));
-//	}
 
 
 	@Override
@@ -381,7 +375,7 @@ public class ItemLawSword extends ItemSword implements IXUItem {
 									}
 								}
 
-								lines.set(line_index, line.replaceFirst(String.valueOf(c), ChatFormatting.RESET.toString() + ChatFormatting.WHITE.toString() + "" + c + "" + formatting));
+								lines.set(line_index, line.replaceFirst(String.valueOf(c), ChatFormatting.RESET.toString() + ChatFormatting.WHITE + "" + c + "" + formatting));
 
 								char_index++;
 

@@ -254,9 +254,7 @@ public class XUJEIPlugin extends BlankModPlugin implements IModPlugin {
 
 
 		final IItemListOverlay itemListOverlay = jeiRuntime.getItemListOverlay();
-//		ICloseable closable = (ItemListOverlay) itemListOverlay;
-//		Radar.register(itemListOverlay, jeiRuntime);
-		if (XU2Entries.indexer.enabled) {
+        if (XU2Entries.indexer.enabled) {
 			TileIndexer.ContainerIndexer.textInterface = new TileIndexer.ContainerIndexer.JeiTextInterface() {
 				@Nonnull
 				@Override
@@ -325,8 +323,6 @@ public class XUJEIPlugin extends BlankModPlugin implements IModPlugin {
 		@Nullable
 		@Override
 		public String getSubtypeInfo(@Nonnull ItemStack itemStack) {
-			NBTTagCompound tagCompound = itemStack.getTagCompound();
-			if (tagCompound == null) return null;
 			return null;
 		}
 	}

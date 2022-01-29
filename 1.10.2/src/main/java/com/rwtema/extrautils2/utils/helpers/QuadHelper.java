@@ -288,7 +288,7 @@ public class QuadHelper {
 
 		int col = addShading ? getFaceShadeColor(c.x, c.y, c.z) : 0xffffffff;
 
-		int vertex[] = new int[28];
+		int[] vertex = new int[28];
 
 		for (int i = 0; i < 4; i++) {
 			vertex[(i * 7)] = Float.floatToRawIntBits(vecs[i].x);
@@ -317,17 +317,6 @@ public class QuadHelper {
 
 		VertexFormat format = quad.getFormat();
 		int[] pixels = sprite.getFrameTextureData(0)[0];
-//		boolean anyTransparent = false;
-//		for (int color : pixels) {
-//			int alpha = color >> 24 & 0xFF;
-//			if (alpha <= 4) {
-//				anyTransparent = true;
-//				break;
-//			}
-//		}
-//
-//		if (!anyTransparent)
-//			return ImmutableList.of(new BakedQuadRetextured(quad, newsprite));
 
 		int offset_position = format.getElements().indexOf(DefaultVertexFormats.POSITION_3F);
 		int offset_color = format.getElements().indexOf(DefaultVertexFormats.COLOR_4UB);

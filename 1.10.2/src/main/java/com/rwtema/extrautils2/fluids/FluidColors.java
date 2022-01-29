@@ -23,7 +23,6 @@ import javax.annotation.Nonnull;
 import java.util.concurrent.ExecutionException;
 
 public class FluidColors {
-
 	public static final LoadingCache<Fluid, Integer> FLUID_COLOR = CacheBuilder.newBuilder().build(new SidedCacheLoader<Fluid, Integer>() {
 		@Override
 		@SideOnly(Side.SERVER)

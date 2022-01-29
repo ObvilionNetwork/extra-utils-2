@@ -154,14 +154,7 @@ public class ItemFlatTransferNode extends XUItemFlatMetadata implements ILeftCli
 
 	@SubscribeEvent
 	public void run(PlayerInteractEvent.RightClickBlock event) {
-//		if (!event.getWorld().isRemote) {
-//			return;
-//		}
-//		ItemStack itemStack = event.getItemStack();
-//		if (StackHelper.isNonNull(itemStack) && itemStack.getItem() == this) {
-//			event.setCanceled(true);
-//		}
-	}
+    }
 
 	@Override
 	public boolean leftClick(World world, EntityPlayer player, ItemStack stack) {

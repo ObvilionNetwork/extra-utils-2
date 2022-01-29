@@ -68,42 +68,8 @@ public class WidgetSlotItemHandler extends SlotItemHandler implements IWidget {
 			((IItemHandlerUpdate) itemHandler).onChange(index);
 		}
 	}
-//
-//	@Override
-//	public int getItemStackLimit(ItemStack stack) {
-//		IItemHandler handler = getItemHandler();
-//		if (handler instanceof IItemHandlerModifiable) {
-//			IItemHandlerModifiable modifiable = (IItemHandlerModifiable) handler;
-//			ItemStack prevStack = modifiable.getStackInSlot(index);
-//			modifiable.setStackInSlot(index, null);
-//
-//			stack = stack.copy();
-//			int limit = stack.getMaxStackSize();
-//			stack.stackSize = limit;
-//			ItemStack itemStack = modifiable.insertItem(index, stack, true);
-//			if (itemStack != null) limit -= itemStack.stackSize;
-//
-//			modifiable.setStackInSlot(index, prevStack);
-//			return limit;
-//		} else
-//			return super.getItemStackLimit(stack);
-//	}
-//
-//	@Override
-//	public boolean isItemValid(ItemStack stack) {
-//		IItemHandler handler = getItemHandler();
-//		if (handler instanceof IItemHandlerModifiable) {
-//			IItemHandlerModifiable modifiable = (IItemHandlerModifiable) handler;
-//			ItemStack prevStack = modifiable.getStackInSlot(index);
-//			modifiable.setStackInSlot(index, null);
-//			ItemStack remainder = modifiable.insertItem(index, stack, true);
-//			modifiable.setStackInSlot(index, prevStack);
-//			return remainder == null || remainder.stackSize < stack.stackSize;
-//		} else
-//			return super.isItemValid(stack);
-//	}
 
-	@Override
+    @Override
 	@SideOnly(Side.CLIENT)
 	public void renderBackground(TextureManager manager, DynamicGui gui, int guiLeft, int guiTop) {
 		gui.drawTexturedModalRect(guiLeft + getX(), guiTop + getY(), 0, 0, 18, 18);

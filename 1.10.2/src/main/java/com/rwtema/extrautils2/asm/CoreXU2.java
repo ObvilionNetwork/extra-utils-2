@@ -67,8 +67,4 @@ public class CoreXU2 implements IFMLLoadingPlugin {
 		return null;
 	}
 
-//	@Override
-//	public boolean registerBus(EventBus bus, LoadController controller) {
-//		return true;
-//	}
 }

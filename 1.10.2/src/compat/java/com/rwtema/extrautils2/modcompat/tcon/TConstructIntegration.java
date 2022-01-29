@@ -96,9 +96,7 @@ public class TConstructIntegration extends VoidEntry {
 							boolean[] edges = filter(edgeDist, 1);
 //							addOverrides(colorOverride, and(expand(edges),filter(edgeDist, 2)), 0xFF420B00);
 							addOverrides(colorOverride, edges, 0x550B00);
-//							boolean[] corners = and(expand(getCorners(invert(filter(datum, 0)))), edges);
-//							addOverrides(colorOverride, corners, 0xFFFFdA70);
-							addColorPalette(
+                            addColorPalette(
 									0xFFFFAA00,
 									0xFF930400,
 									0xFFC20700,

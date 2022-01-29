@@ -145,32 +145,6 @@ public class AltStackStorage {
 	}
 
 	public static void test() {
-//		Random random = new Random();
-//		ArrayList<ItemStack> itemStackArrayList = new ArrayList<ItemStack>();
-//		itemStackArrayList.add(null);
-//		itemStackArrayList.add(new ItemStack(Items.COAL, 54));
-//		itemStackArrayList.add(new ItemStack(Items.COAL, 64));
-//		for (Item item : Item.REGISTRY) {
-//			ArrayList<ItemStack> list = new ArrayList<>();
-//			item.getSubItems(item, item.getCreativeTab(), list);
-//			itemStackArrayList.addAll(list);
-//			itemStackArrayList.addAll(list.stream().map(t -> ItemHandlerHelper.copyStackWithSize(t, 1)).collect(Collectors.toList()));
-//			itemStackArrayList.addAll(list.stream().map(t -> ItemHandlerHelper.copyStackWithSize(t, 64)).collect(Collectors.toList()));
-//			itemStackArrayList.addAll(list.stream().map(t -> ItemHandlerHelper.copyStackWithSize(t, 1 + random.nextInt(87))).collect(Collectors.toList()));
-//		}
-//
-//		for (ItemStack stack : itemStackArrayList) {
-//			byte[] bytes = storeData(stack);
-//
-//			ItemStack newStack = loadData(bytes);
-//
-//			if (!ItemStack.areItemStacksEqual(newStack, stack)) {
-//				LogHelper.info(newStack + " <> " + stack);
-//				bytes = storeData(stack);
-//				newStack = loadData(bytes);
-//			}
-//		}
-//		LogHelper.info("Complete");
 
 	}
 }

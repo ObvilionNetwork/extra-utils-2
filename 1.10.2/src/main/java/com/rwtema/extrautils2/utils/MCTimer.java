@@ -26,12 +26,7 @@ public class MCTimer {
 			return;
 		}
 		serverTimer++;
-//
-//		if (lastServerTickTime != -1) {
-//lastServerTickTime = MinecraftServer.getCurrentTimeMillis();
-//		} else
-//			lastServerTickTime = MinecraftServer.getCurrentTimeMillis();
-	}
+    }
 
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)

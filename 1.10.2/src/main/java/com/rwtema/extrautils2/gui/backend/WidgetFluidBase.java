@@ -11,14 +11,14 @@ import net.minecraftforge.fluids.IFluidTank;
 import java.util.List;
 
 public abstract class WidgetFluidBase extends WidgetBase implements IWidgetServerNetwork, IWidgetCustomJEIIngredient {
-	public static final int ux2[] = new int[]{18, 18, 18};
-	public static final int uy2[] = new int[]{0, 0, 0};
-	public static final int uw2[] = new int[]{7, 7, 7};
+	public static final int[] ux2 = new int[]{18, 18, 18};
+	public static final int[] uy2 = new int[]{0, 0, 0};
+	public static final int[] uw2 = new int[]{7, 7, 7};
 	//	public static final int uh2[] = new int[]{64, 64, 64};
-	public static final int ux[] = new int[]{32, 0, 50};
-	public static final int uy[] = new int[]{0, 0, 0};
-	public static final int uw[] = new int[]{18, 18, 18};
-	public static final int uh[] = new int[]{33, 18, 65};
+	public static final int[] ux = new int[]{32, 0, 50};
+	public static final int[] uy = new int[]{0, 0, 0};
+	public static final int[] uw = new int[]{18, 18, 18};
+	public static final int[] uh = new int[]{33, 18, 65};
 	FluidStack curFluid;
 	int curCapacity;
 	int shape;

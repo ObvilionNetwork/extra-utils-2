@@ -2,7 +2,6 @@ package com.rwtema.extrautils2.transfernodes;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.rwtema.extrautils2.utils.datastructures.FunctionABBool;
 import com.rwtema.extrautils2.utils.helpers.CollectionHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;

@@ -1,6 +1,5 @@
 package com.rwtema.extrautils2.blocks;
 
-import com.rwtema.extrautils2.ExtraUtils2;
 import com.rwtema.extrautils2.backend.XUBlockStateCreator;
 import com.rwtema.extrautils2.backend.XUBlockStatic;
 import com.rwtema.extrautils2.backend.entries.BlockEntry;
@@ -9,12 +8,9 @@ import com.rwtema.extrautils2.backend.model.BoxModel;
 import com.rwtema.extrautils2.backend.model.BoxSingleQuad;
 import com.rwtema.extrautils2.backend.model.UV;
 import com.rwtema.extrautils2.crafting.CraftingHelper;
-import com.rwtema.extrautils2.network.NetworkHandler;
-import com.rwtema.extrautils2.particles.PacketParticleSplosion;
 import com.rwtema.extrautils2.utils.Lang;
 import com.rwtema.extrautils2.utils.datastructures.WeakLinkedSet;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -37,11 +33,9 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.fluids.IFluidBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import javax.annotation.Nonnull;
@@ -188,19 +182,8 @@ public class BlockSpike extends XUBlockStatic {
 		return super.getValidRotations(world, pos);
 	}
 
-//	@Override
-//	public boolean hasTileEntity(IBlockState state) {
-//		return state.getValue(enchanted);
-//	}
-//
-//	@Nonnull
-//	@Override
-//	public TileEntity createTileEntity(@Nonnull World world, @Nonnull IBlockState state) {
-//		return new TileSpike();
-//	}
 
-
-	public enum SpikeType {
+    public enum SpikeType {
 		wood(Material.WOOD, 1, Items.WOODEN_SWORD, new ItemStack(Blocks.PLANKS), new ItemStack(Blocks.LOG)) {
 			@Override
 			public void hurtEntity(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase entityIn) {

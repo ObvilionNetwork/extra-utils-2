@@ -437,10 +437,6 @@ public class BlockCursedEarth extends XUBlockConnectedTextureBase {
 		@SubscribeEvent
 		public void render(RenderLivingEvent.Pre event) {
 			if (cursedClient.contains(event.getEntity())) {
-//				GlStateManager.enableBlend();
-//				GlStateManager.alphaFunc(516, 0.003921569F);
-//				GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, GlStateManager.DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-//				GlStateManager.enableAlpha();
 				float v = 0.1F;
 				GlStateManager.color(v, v, v, 1F);
 			}
@@ -451,9 +447,6 @@ public class BlockCursedEarth extends XUBlockConnectedTextureBase {
 		public void render(RenderLivingEvent.Post event) {
 			if (cursedClient.contains(event.getEntity())) {
 				GlStateManager.color(1, 1, 1, 1);
-//				GlStateManager.disableBlend();
-//				GlStateManager.alphaFunc(516, 0.1F);
-//				GlStateManager.depthMask(true);
 			}
 		}
 

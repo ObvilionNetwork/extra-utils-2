@@ -50,32 +50,8 @@ public class TileSynergyUnit extends TilePower implements IWorldPowerMultiplier 
 		super.handleDescriptionPacket(packet);
 		synergy_type.value = BlockSynergy.SynergyType.values()[packet.readUnsignedByte()];
 	}
-//
-//	@Override
-//	public float multiplier(World world, TIntObjectMap<TObjectFloatHashMap<IWorldPowerMultiplier>> rawTypeCreators, TIntObjectMap<TObjectFloatHashMap<IWorldPowerMultiplier>> rawTypeDrainers) {
-//		BlockSynergy.SynergyType synergyType = synergy_type.value;
-//		GeneratorType boostedType = synergyType.a;
-//		GeneratorType other = synergyType.b;
-//
-//		if (boostedType == null || other == null) return 0;
-//
-//		float a = 0, b = 0;
-//		for (CollectionHelper.ObjectIntEntry<TObjectFloatHashMap<IWorldPowerMultiplier>> entry : CollectionHelper.iterateTIO(rawTypeCreators)) {
-//			WorldServer worldServer = DimensionManager.getWorld(entry.getInt());
-//
-//			TObjectFloatHashMap<IWorldPowerMultiplier> map = entry.getObject();
-//			if (map.contains(boostedType)) {
-//				a += map.get(boostedType) * boostedType.multiplier(worldServer);
-//			}
-//			if (map.contains(other)) {
-//				b += map.get(other) * other.multiplier(worldServer);
-//			}
-//		}
-//
-//		return synergyType.boost * a * b;
-//	}
 
-	@Override
+    @Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack, XUBlock xuBlock) {
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack, xuBlock);
 

@@ -160,7 +160,7 @@ public class IMCHandler {
 		Iterable<MachineSlot<?>> allSlots = Iterables.concat(machine.itemInputs, machine.itemOutputs, machine.fluidInputs, machine.fluidOutputs);
 		for (MachineSlot<?> slot : allSlots) {
 			if (!slot.optional && !tag.hasKey(slot.name)) {
-				throw new IllegalArgumentException("Missing slot " + slot.name + " in tag " + tag.toString());
+				throw new IllegalArgumentException("Missing slot " + slot.name + " in tag " + tag);
 			}
 			if (tag.hasKey(slot.name + "_probability")) {
 				builder.setProbability(slot, tag.getFloat(slot.name + "_probability"));

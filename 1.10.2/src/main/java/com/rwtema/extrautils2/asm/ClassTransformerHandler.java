@@ -15,10 +15,6 @@ public class ClassTransformerHandler implements IClassTransformer {
 	);
 	static Logger logger = LogManager.getLogger("ExtraUtils2CoreMod");
 
-	static {
-		logger.info("Transformer Class Initialized");
-	}
-
 	public ClassTransformerHandler() {
 		logger.info("Transformer Created");
 	}
@@ -32,9 +28,9 @@ public class ClassTransformerHandler implements IClassTransformer {
 			bytes = transformer.transform(s, s2, bytes);
 			if (b != bytes) {
 				if (builder == null)
-					builder = new StringBuilder("XU Transformer: ").append(s).append("(").append(s2).append(")").append(" {").append(transformer.toString());
+					builder = new StringBuilder("XU Transformer: ").append(s).append("(").append(s2).append(")").append(" {").append(transformer);
 				else
-					builder.append(",  ").append(transformer.toString());
+					builder.append(",  ").append(transformer);
 			}
 		}
 		if (builder != null) {

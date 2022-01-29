@@ -132,22 +132,6 @@ public class BlockDecorativeGlass extends XUBlockConnectedTextureBase {
 		return state.getValue(decor).redstone_level;
 	}
 
-//	@Override
-//	public int getStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side) {
-//		if(state == null) {
-//			if (worldIn instanceof World) {
-//				if (!((World) worldIn).isBlockLoaded(pos)) {
-//					return 0;
-//				}
-//			}
-//
-//			state = worldIn.getBlockState(pos);
-//			if (state.getBlock() != this)
-//				return 0;
-//		}
-//		return state.getValue(decor).redstone_level;
-//	}
-
 	public enum DecorStates implements IItemStackMaker {
 		glass {
 			@Override

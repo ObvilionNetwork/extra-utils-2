@@ -81,14 +81,7 @@ public class ItemFireAxe extends ItemAxe implements IXUItem {
 		MinecraftForge.EVENT_BUS.register(new ItemLawSword.OPAnvilHandler(this));
 	}
 
-//	@Override
-//	@SideOnly(Side.CLIENT)
-//	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-//		super.addInformation(stack, playerIn, tooltip, advanced);
-//		tooltip.add(Lang.translate("\"Truly, a weapon for madmen. Who else would attack fire with a blade?\""));
-//	}
-
-	@Override
+    @Override
 	@SideOnly(Side.CLIENT)
 	public void registerTextures() {
 		Textures.register("fire_axe");
@@ -152,10 +145,7 @@ public class ItemFireAxe extends ItemAxe implements IXUItem {
 
 	@Override
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target, @Nonnull EntityLivingBase attacker) {
-//		if (target != null && !target.isImmuneToFire()) {
-//			target.setFire(5);
-//		}
-		return super.hitEntity(stack, target, attacker);
+        return super.hitEntity(stack, target, attacker);
 	}
 
 	@Override

@@ -91,9 +91,7 @@ public class TileEvil extends XUTile implements ILight, ITESRHook {
 
 	@Override
 	public void render(IBlockAccess world, BlockPos pos, double x, double y, double z, float partialTicks, int destroyStage, IVertexBuffer renderer, BlockRendererDispatcher blockRenderer) {
-//		IBakedModel model = blockRenderer.getModelFromBlockState(BlockStates.enchanting_table, world, pos);
-//		renderBakedModel(world, renderer, blockRenderer, model);
-	}
+    }
 
 	@Override
 	public void preRender(int destroyStage) {

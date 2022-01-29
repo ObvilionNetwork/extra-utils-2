@@ -226,34 +226,5 @@ public class BlockSpotlight extends XUBlock {
 
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-//		TileSpotlight tile = (TileSpotlight) getTile(worldIn, pos);
-//		float[] normal = tile.getNormal();
-//		for (int i = 0; i < 100; i++) {
-//			float r = rand.nextFloat() * TileSpotlight.range;
-//
-//			worldIn.spawnParticle(EnumParticleTypes.REDSTONE,
-//					pos.getX() + 0.5 + normal[0] * r,
-//					pos.getY() + 0.5 + normal[1] * r,
-//					pos.getZ() + 0.5 + normal[2] * r, 0.0D, 0.0D, 0.0D);
-//		}
-//
-//
-//		EntityPlayerSP player = Minecraft.getMinecraft().player;
-//		double dx = player.posX - pos.getX() - 0.5;
-//		double dy = player.posY - pos.getY() - 0.5;
-//		double dz = player.posZ - pos.getZ() - 0.5;
-//		double t = dx * normal[0]
-//				+ dy * normal[1]
-//				+ dz * normal[2];
-//
-//
-//		for (int i = 0; i < 100; i++) {
-//			float d = rand.nextFloat();
-//			worldIn.spawnParticle(EnumParticleTypes.REDSTONE,
-//					player.posX + d * (pos.getX() + 0.5 + normal[0] * t - player.posX),
-//					player.posY + d * (pos.getY() + 0.5 + normal[1] * t - player.posY),
-//					player.posZ + d * (pos.getZ() + 0.5 + normal[2] * t - player.posZ),
-//					0, 0, 0);
-//		}
-	}
+    }
 }

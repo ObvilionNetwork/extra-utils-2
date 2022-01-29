@@ -324,22 +324,13 @@ public class ItemIngredients extends XUItemFlatMetadata implements IUpgradeProvi
 
 			@Override
 			public boolean hasContainerItem(ItemStack stack) {
-//				NBTTagCompound nbt = stack.getTagCompound();
-//				return nbt != null && nbt.hasKey("Freq", Constants.NBT.TAG_INT);
-				return false;
+                return false;
 			}
 
 			@Override
 			public ItemStack getContainerItem(ItemStack itemStack) {
-//				NBTTagCompound nbt = itemStack.getTagCompound();
-//				if (nbt != null && nbt.hasKey("Freq", Constants.NBT.TAG_INT)) {
-//					Side effectiveSide = FMLCommonHandler.instance().getEffectiveSide();
-//					if(effectiveSide == Side.SERVER) {
-//						PowerManager.addPulseTime(nbt.getInteger("Freq"), 20 * 10);
-//					}
-//				}
 
-				return StackHelper.empty();
+                return StackHelper.empty();
 			}
 
 			@Override

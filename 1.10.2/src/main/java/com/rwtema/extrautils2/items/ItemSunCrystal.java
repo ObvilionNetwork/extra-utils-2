@@ -52,7 +52,7 @@ public class ItemSunCrystal extends XUItem {
 	List<BakedQuad> rays;
 	float prevTime = -1;
 	@SideOnly(Side.CLIENT)
-	Vector3f vecs[];
+	Vector3f[] vecs;
 
 	public ItemSunCrystal() {
 		this.setMaxDamage(250);

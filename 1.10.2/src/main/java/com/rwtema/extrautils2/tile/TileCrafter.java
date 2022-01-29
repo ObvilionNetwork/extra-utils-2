@@ -316,30 +316,8 @@ public class TileCrafter extends TileAdvInteractor implements ITickable, IDynami
 					markForUpdate();
 				ghostOutput.setStack(StackHelper.empty());
 			}
-//			mainLoop:
-//			for (int i = 0; i < recipeSlots.getSlots(); i++) {
-//				ItemStack stackInSlot = recipeSlots.getStackInSlot(i);
-//				if (StackHelper.isNull(stackInSlot)) continue;
-//				ItemStack itemStack = ItemHandlerHelper.copyStackWithSize(stackInSlot, 1);
-//				for (Object o : input) {
-//					if (o instanceof ItemStack && ItemHandlerHelper.canItemStacksStack(itemStack, (ItemStack) o)) {
-//						continue mainLoop;
-//					}
-//				}
-//
-//				if (input.size() == 9) {
-//					Object o = input.get(i);
-//					if (o == null || (o instanceof ItemStack && StackHelper.isNull((ItemStack) o)) || (o instanceof List && ((List) o).isEmpty())) {
-//						input.set(i, stackInSlot.copy());
-//					}
-//				} else {
-//					if(input.size() < 9) {
-//						input.add(itemStack);
-//					}
-//				}
-//			}
 
-			for (int i = 0; i < input.size(); i++) {
+            for (int i = 0; i < input.size(); i++) {
 				genericStacks[i] = StackHelper.empty();
 
 				Object o = input.get(i);
@@ -457,10 +435,7 @@ public class TileCrafter extends TileAdvInteractor implements ITickable, IDynami
 					data[i] = Float.floatToRawIntBits(0.5F + (ax * c - az * s) * 0.25F);
 					data[i + 1] = Float.floatToRawIntBits(0.05F + ay * 0.25F);
 					data[i + 2] = Float.floatToRawIntBits(0.5F + (ax * s + az * c) * 0.25F);
-//						int col = data[i + 3];
-//						int alpha = ((col & 0xff000000) >> 17) << 16;
-//						data[i + 3] = alpha | (col & 0x00ffffff);
-				}
+                }
 
 				list.add(new BakedQuad(data, bakedQuad.getTintIndex(), bakedQuad.getFace(), bakedQuad.getSprite(), bakedQuad.shouldApplyDiffuseLighting(), bakedQuad.getFormat()));
 			}

@@ -36,16 +36,6 @@ public class BlockTransferPipe extends XUBlockStatic implements IPipe {
 	public static final Map<EnumFacing, IProperty<Boolean>> SIDE_BLOCKED = XUBlockStateCreator.createDirectionBooleanMap("blocked", (name, side) -> PropertyBool.create(name));
 	public static MultiBlockStateBuilder<BlockTransferPipe> stateBuilder = new MultiBlockStateBuilder<>(BlockTransferPipe.class)
 			.addWorldProperties(SIDE_BLOCKED.values());
-	//	public static final Map<EnumFacing, IMetaProperty<Boolean>> SIDE_PIPE_CONNECTED = XUBlockStateCreator.createDirectionBooleanMap("connected", (name, side) -> {
-//		IProperty<Boolean> propertyBool = PropertyBool.create(name);
-//		return new IMetaProperty.Wrap<Boolean>(propertyBool) {
-//			@Override
-//			public Boolean calculateValue(IBlockAccess world, BlockPos pos, IBlockState originalState) {
-//				IPipe pipe = TransferHelper.getPipe(world, pos);
-//				return shouldConnectPipe(world, pos, side, pipe) || shouldConnectTile(world, pos, side, pipe);
-//			}
-//		};
-//	});
 	EnumMap<EnumFacing, HashSet<IBlockState>> canOutputPipeStates;
 	IBlockState defaultSimple;
 	IBlockState allSides;

@@ -96,7 +96,7 @@ public class Box implements IClientClearCache {
 	@SideOnly(Side.CLIENT)
 	private static List<BakedQuad> makeFlatSideBakedQuad(Box box, @Nonnull EnumFacing side, TextureAtlasSprite textureAtlasSprite, int tint, int color) {
 		int index = side.getIndex();
-		int vertex[] = new int[28];
+		int[] vertex = new int[28];
 
 		int rot = box.rotate[side.ordinal()] & 3;
 		for (int i = 0; i < 4; i++) {

@@ -41,16 +41,6 @@ public class BlockMoonStone extends XUBlock {
 		return getModel();
 	}
 
-//	@Override
-//	public int getMixedBrightnessForBlock(IBlockAccess worldIn, BlockPos pos) {
-//		BlockRenderLayer renderLayer = MinecraftForgeClient.getRenderLayer();
-//		if (renderLayer == BlockRenderLayer.TRANSLUCENT) {
-//			return 15 << 4 | 15 << 20;
-//		}
-//
-//		return super.getMixedBrightnessForBlock(worldIn, pos);
-//	}
-
 	@Override
 	public void registerTextures() {
 		Textures.register("moon_stone_cutout");

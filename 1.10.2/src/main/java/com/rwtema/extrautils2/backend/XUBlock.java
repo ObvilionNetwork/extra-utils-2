@@ -1,6 +1,5 @@
 package com.rwtema.extrautils2.backend;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.rwtema.extrautils2.ExtraUtils2;
 import com.rwtema.extrautils2.achievements.AchievementHelper;
@@ -96,12 +95,7 @@ public abstract class XUBlock extends BlockCompat implements IRegisterItemColors
 		return finishedCreating && getGenericWorldModel(state).isFullCube();
 	}
 
-//	@Override
-//	public boolean isVisuallyOpaque() {
-//		return super.isVisuallyOpaque();
-//	}
-
-	@Nonnull
+    @Nonnull
 	@Override
 	protected XUBlockStateCreator createBlockState() {
 		return new XUBlockStateCreator(this);

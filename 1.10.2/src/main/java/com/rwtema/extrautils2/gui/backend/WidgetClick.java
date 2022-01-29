@@ -2,7 +2,6 @@ package com.rwtema.extrautils2.gui.backend;
 
 import com.rwtema.extrautils2.network.XUPacketBuffer;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public abstract class WidgetClick extends WidgetClickBase {

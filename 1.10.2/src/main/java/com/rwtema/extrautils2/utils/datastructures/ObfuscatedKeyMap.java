@@ -48,7 +48,6 @@ public class ObfuscatedKeyMap<V> {
 			if (subEntry.length == 0 && subEntry.altHash == 0) {
 				return subEntry.value;
 			}
-			return null;
 		} else {
 			int hash = key.hashCode();
 			int potentialHash = seed;
@@ -65,8 +64,8 @@ public class ObfuscatedKeyMap<V> {
 				if (i >= key.length()) i = 0;
 				p++;
 			}
-			return null;
 		}
+		return null;
 	}
 
 	private static class SubEntry<T> {

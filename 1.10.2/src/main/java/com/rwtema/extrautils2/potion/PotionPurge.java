@@ -28,11 +28,10 @@ public class PotionPurge extends XUPotion {
 			foodStats.writeNBT(compound);
 			if (entityLivingBaseIn == source) {
 				compound.setInteger("foodLevel", 0);
-				compound.setFloat("foodSaturationLevel", 0);
 			} else {
 				compound.setInteger("foodLevel", Math.max(0, (compound.getInteger("foodLevel") + 1) / 2));
-				compound.setFloat("foodSaturationLevel", 0);
 			}
+			compound.setFloat("foodSaturationLevel", 0);
 			foodStats.readNBT(compound);
 		}
 	}

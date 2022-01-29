@@ -621,14 +621,7 @@ public class EntityBoomerang extends Entity implements IEntityAdditionalSpawnDat
 		flyTime = additionalData.readInt();
 	}
 
-//	private static final DataParameter<String> PROFESSION_STR = EntityDataManager.<String>createKey(EntityVillager.class, DataSerializers.STRING);
-//	private net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession prof;
-//	public void notifyDataManagerChange(DataParameter<?> key) {
-//		if(key == PROFESSION_STR)
-//		prof = null;
-//	}
-
-	public class DamageSourceBoomerang extends EntityDamageSourceIndirect {
+    public class DamageSourceBoomerang extends EntityDamageSourceIndirect {
 
 		public DamageSourceBoomerang(EntityBoomerang indirectEntityIn, Entity owner) {
 			super("boomerang", indirectEntityIn, owner);

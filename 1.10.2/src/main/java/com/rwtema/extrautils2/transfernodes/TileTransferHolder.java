@@ -76,12 +76,7 @@ public class TileTransferHolder extends TilePower implements ITickable, IPipe, I
 
 	@Override
 	protected Iterable<ItemStack> getDropHandler() {
-//		List<ItemStack> drops = new ArrayList<>();
-//		for (Grocket grocket : grockets) {
-//			if (grocket != null) drops.addOverrides(grocket.getDrops());
-//		}
-//		return drops;
-		return null;
+        return null;
 	}
 
 	@Override

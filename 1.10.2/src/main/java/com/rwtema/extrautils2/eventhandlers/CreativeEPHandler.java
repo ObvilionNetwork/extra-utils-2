@@ -57,6 +57,5 @@ public class CreativeEPHandler {
 		if (player instanceof EntityPlayerMP) {
 			((EntityPlayerMP) player).sendContainerToPlayer(player.inventoryContainer);
 		}
-
 	}
 }

@@ -188,17 +188,7 @@ public class FlatTransferNodeHandler extends ChunkDataModuleManager<Multimap<Blo
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void clientTick(Chunk chunk, Multimap<BlockPos, FlatTransferNode> data) {
-//		World world = chunk.getWorld();
-//		Random rand = world.rand;
-//		for (FlatTransferNode flatTransferNode : data.values()) {
-//			AxisAlignedBB bounds = flatTransferNode.getBounds();
-//			double x = bounds.minX + (bounds.maxX - bounds.minX) * rand.nextFloat();
-//			double y = bounds.minY + (bounds.maxY - bounds.minY) * rand.nextFloat();
-//			double z = bounds.minZ + (bounds.maxZ - bounds.minZ) * rand.nextFloat();
-//
-//			world.spawnParticle(EnumParticleTypes.REDSTONE, x, y, z, 0, 0, 0);
-//		}
-	}
+    }
 
 	@Override
 	public void writeToNBT(NBTTagCompound base, Multimap<BlockPos, FlatTransferNodeHandler.FlatTransferNode> entries) {

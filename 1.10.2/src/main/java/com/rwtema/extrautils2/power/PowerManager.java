@@ -1,7 +1,6 @@
 package com.rwtema.extrautils2.power;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.rwtema.extrautils2.network.NetworkHandler;
 import com.rwtema.extrautils2.network.XUPacketServerToClient;
@@ -12,7 +11,6 @@ import com.rwtema.extrautils2.utils.helpers.PlayerHelper;
 import gnu.trove.iterator.TIntIterator;
 import gnu.trove.iterator.TIntObjectIterator;
 import gnu.trove.iterator.TObjectFloatIterator;
-import gnu.trove.list.array.TIntArrayList;
 import gnu.trove.list.linked.TIntLinkedList;
 import gnu.trove.map.hash.TIntIntHashMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
@@ -551,33 +549,7 @@ public class PowerManager {
 			powerCreated = calcPower(worldPowerCreators);
 			powerDrained = calcPower(worldPowerDrainers);
 
-//			TIntIterator iterator = playerFreqs.iterator();
-//			while (iterator.hasNext()) {
-//				UnloadedChunkPower.FreqData freqData = instance.unloadedChunkManager.freqs.get(iterator.next());
-//				if (freqData != null) {
-//					powerCreated += freqData.getPowerCreated();
-//					powerDrained += freqData.getPowerDrained();
-//				}
-//			}
-
-//			TIntObjectHashMap<TObjectFloatHashMap<IWorldPowerMultiplier>> rawTypeCreators = new TIntObjectHashMap<>();
-//			TIntObjectHashMap<TObjectFloatHashMap<IWorldPowerMultiplier>> rawTypeDrainers = new TIntObjectHashMap<>();
-//
-//			getRawTypes(rawTypeCreators, rawTypeDrainers);
-//
-//			powerCreated = 0;
-//			powerDrained = 0;
-//
-//			TObjectFloatHashMap<IWorldPowerMultiplier> powerCreatorsTotal = new TObjectFloatHashMap<>();
-//			TObjectFloatHashMap<IWorldPowerMultiplier> powerDrainersTotal = new TObjectFloatHashMap<>();
-//
-//			sumPowerDetails(powerCreatorsTotal, rawTypeCreators);
-//			sumPowerDetails(powerDrainersTotal, rawTypeDrainers);
-//
-//			powerCreated = sum(powerCreatorsTotal);
-//			powerDrained = sum(powerDrainersTotal);
-
-			TIntIterator iterator = playerFreqs.iterator();
+            TIntIterator iterator = playerFreqs.iterator();
 			long t = -1;
 			while (iterator.hasNext()) {
 				int freq = iterator.next();
@@ -669,23 +641,7 @@ public class PowerManager {
 
 		}
 
-//		private float calcPowerPlayer(WeakHashMap<EntityPlayerMP, TObjectFloatHashMap<IPowerItem>> multiplierCache) {
-//			float p = 0;
-//			for (Map.Entry<EntityPlayerMP, TObjectFloatHashMap<IPowerItem>> entry : multiplierCache.entrySet()) {
-//				TObjectFloatIterator<IPowerItem> iterator = entry.getValue().iterator();
-//				while (iterator.hasNext()) {
-//					iterator.advance();
-//					IPowerItem powerMultiplier = iterator.key();
-//					float multiplier = powerMultiplier.getMultiplier(entry.getKey());
-//					float value = iterator.value();
-//					p += multiplier * value;
-//				}
-//			}
-//
-//			return p;
-//		}
-
-		public void sendNetworkUpdates() {
+        public void sendNetworkUpdates() {
 			for (EntityPlayerMP player : players) {
 				NetworkHandler.sendPacketToPlayer(new PacketPower(powerCreated, powerDrained), player);
 			}
@@ -696,17 +652,7 @@ public class PowerManager {
 				powerNeeder.powerChanged(powered);
 			}
 
-//			for (EntityPlayerMP player : players) {
-//				HashSet<IPowerItem> powerItems = new HashSet<IPowerItem>();
-//				TObjectFloatHashMap<IPowerItem> powerMap;
-//				if ((powerMap = playerPowerDrainers.get(player)) != null) powerItems.addOverrides(powerMap.keySet());
-//				if ((powerMap = playerPowerCreators.get(player)) != null) powerItems.addOverrides(powerMap.keySet());
-//
-//				for (IPowerItem powerItem : powerItems) {
-//					powerItem.onChange(player, powered);
-//				}
-//			}
-		}
+        }
 
 		public boolean isPowered() {
 			return powerDrained <= powerCreated;

@@ -225,18 +225,7 @@ public class ItemWateringCan extends XUItemFlat {
 
 								if (!cheat && worldObj.rand.nextInt(9 * 5 * 5 * 20) == 0) {
 									if (worldObj.isAirBlock(pos.up())) {
-//										if (flowers.size() > 0 && worldObj.rand.nextInt(5) == 0) {
-//											ItemStack flower = flowers.get(worldObj.rand.nextInt(flowers.size()));
-//
-//											if (flower.getItem() instanceof ItemBlock) {
-//												if (play != null)
-//													((ItemBlock) flower.getItem()).placeBlockAt(flower, play, worldObj, x, y + 1, z, 1, 0.5F, 1, 0.5F,
-//															flower.getItem().getMetadata(flower.getItemDamage()));
-//											}
-//										} else {
-//											worldObj.getBiomeGenForCoords(x, z).plantFlower(worldObj, rand, x, y + 1, z);
-//										}
-									}
+                                    }
 								}
 							} else if (id == Blocks.MYCELIUM) {
 								timer = 20;
@@ -261,21 +250,7 @@ public class ItemWateringCan extends XUItemFlat {
 					}
 			}
 
-//			if (cheat)
-//				for (int i = 0; i < 100; i++)
-//					for (int x = blockX - range; x <= blockX + range; x++)
-//						for (int y = blockY - range; y <= blockY + range; y++)
-//							for (int z = blockZ - range; z <= blockZ + range; z++) {
-//								Block block = worldObj.getBlock(x, y, z);
-//
-//								block.updateTick(worldObj, x, y, z, worldObj.rand);
-//
-//								TileEntity tile = worldObj.getTileEntity(x, y, z);
-//								if (tile != null && tile.canUpdate() && !tile.isInvalid()) {
-//									tile.updateEntity();
-//								}
-//							}
-		}
+        }
 	}
 
 	@Nonnull

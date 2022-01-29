@@ -85,7 +85,7 @@ public class GLStateAttributes {
 	boolean[] field_texGenState;
 	int[] field_texGenCoord;
 	int[] field_texGenParam;
-	boolean boolStates[];
+	boolean[] boolStates;
 
 	{
 		field_texGenState = new boolean[4];
@@ -157,8 +157,6 @@ public class GLStateAttributes {
 	}
 
 	public void restore() {
-//		if(null == null)
-//			return;
 		for (int i = 0; i < booleanStates.size(); i++) {
 			booleanStates.get(i).setState(boolStates[i]);
 		}

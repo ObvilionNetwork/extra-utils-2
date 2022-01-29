@@ -5,7 +5,6 @@ import com.rwtema.extrautils2.blocks.*;
 import com.rwtema.extrautils2.machine.TileGrouper;
 import com.rwtema.extrautils2.machine.TileItemWrapper;
 import com.rwtema.extrautils2.structure.PatternRecipe;
-import com.rwtema.extrautils2.tile.TileInteractionProxy;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 
