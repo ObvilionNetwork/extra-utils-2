@@ -1,7 +1,6 @@
 package com.rwtema.extrautils2.backend.save;
 
 import com.google.common.collect.Lists;
-import com.rwtema.extrautils2.chunkloading.ChunkLoaderLoginTimes;
 import com.rwtema.extrautils2.compatibility.WorldSavedDataCompat;
 import com.rwtema.extrautils2.power.FrequencyPulses;
 import com.rwtema.extrautils2.power.PowerSettings;
@@ -19,7 +18,6 @@ public class SaveManager extends WorldSavedDataCompat {
 	public static SaveManager manager;
 	public static List<SaveModule> saveModules = Lists.newArrayList(
 			PowerSettings.instance,
-			ChunkLoaderLoginTimes.instance,
 			FrequencyPulses.INSTANCE
 	);
 
