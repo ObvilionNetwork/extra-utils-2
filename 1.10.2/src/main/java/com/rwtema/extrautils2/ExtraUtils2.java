@@ -231,8 +231,6 @@ public class ExtraUtils2 {
 
 	@Mod.EventHandler
 	public void serverStarting(FMLServerStartingEvent event) {
-
-
 		event.registerServerCommand(new CommandDebug());
 		event.registerServerCommand(new CommandToggleCursedEarth());
 		PotionsHelper.serverStart();
@@ -242,12 +240,6 @@ public class ExtraUtils2 {
 	public void serverStarted(FMLServerStartedEvent event) {
 		SaveManager.init();
 	}
-
-//	@Mod.EventHandler
-//	public void serverStoped(FMLServerStoppedEvent event) {
-//		PowerManager.instance.clear();
-//		XUChunkLoaderManager.clear();
-//	}
 
 	@Mod.EventHandler
 	public void getIMC(FMLInterModComms.IMCEvent event) {
@@ -261,26 +253,4 @@ public class ExtraUtils2 {
 			throw toThrow;
 		}
 	}
-
-//	@Mod.EventHandler
-//	public void missingMappings(FMLMissingMappingsEvent event) {
-//		for (FMLMissingMappingsEvent.MissingMapping mapping : event.getAll()) {
-//			ResourceLocation resourceLocation = mapping.resourceLocation;
-//			if (!ExtraUtils2.MODID.equals(resourceLocation.getResourceDomain().toLowerCase(Locale.ENGLISH))) {
-//				continue;
-//			}
-//			ResourceLocation properLocation = new ResourceLocation(ExtraUtils2.MODID, resourceLocation.getResourcePath().toLowerCase(Locale.ENGLISH));
-//			if (mapping.type == GameRegistry.Type.BLOCK) {
-//				Block block = BlockEntry.blockMap.get(properLocation);
-//				if (block != null) {
-//					mapping.remap(block);
-//				}
-//			} else {
-//				Item item = ItemEntry.itemMap.get(properLocation);
-//				if (item != null) {
-//					mapping.remap(item);
-//				}
-//			}
-//		}
-//	}
 }

@@ -18,19 +18,6 @@ import java.util.stream.Collectors;
 @ZenRegister
 @ZenClass(XUTweaker.PACKAGE_NAME_BASE + "IMachineRegistry")
 public class IMachineRegistry {
-
-
-	@ZenMethod
-	public static IMachine createNewMachine(@Nonnull String name,
-											int energyBufferSize,
-											int energyTransferLimit,
-											List<IMachineSlot> inputSlots,
-											List<IMachineSlot> outputSlots,
-											@Nonnull String frontTexture,
-											@Nonnull String frontTextureActive) {
-		return createNewMachine(name, energyBufferSize, energyTransferLimit, inputSlots, outputSlots, frontTexture, frontTextureActive, 0xffffff);
-	}
-
 	@ZenMethod
 	public static IMachine createNewMachine(@Nonnull String name,
 											int energyBufferSize,
@@ -41,29 +28,6 @@ public class IMachineRegistry {
 											@Nonnull String frontTextureActive,
 											int color) {
 		return createNewMachine(name, energyBufferSize, energyTransferLimit, inputSlots, outputSlots, frontTexture, frontTextureActive, color, null, null, null, null, Machine.EnergyMode.USES_ENERGY);
-	}
-
-	@ZenMethod
-	public static IMachine createNewGenerator(@Nonnull String name,
-											  int energyBufferSize,
-											  int energyTransferLimit,
-											  List<IMachineSlot> inputSlots,
-											  List<IMachineSlot> outputSlots,
-											  @Nonnull String frontTexture,
-											  @Nonnull String frontTextureActive) {
-		return createNewGenerator(name, energyBufferSize, energyTransferLimit, inputSlots, outputSlots, frontTexture, frontTextureActive, 0xffffff);
-	}
-
-	@ZenMethod
-	public static IMachine createNewGenerator(@Nonnull String name,
-											  int energyBufferSize,
-											  int energyTransferLimit,
-											  List<IMachineSlot> inputSlots,
-											  List<IMachineSlot> outputSlots,
-											  @Nonnull String frontTexture,
-											  @Nonnull String frontTextureActive,
-											  int color) {
-		return createNewMachine(name, energyBufferSize, energyTransferLimit, inputSlots, outputSlots, frontTexture, frontTextureActive, color, null, null, null, null, Machine.EnergyMode.GENERATES_ENERGY);
 	}
 
 	public static IMachine createNewMachine(@Nonnull String name,
@@ -125,101 +89,4 @@ public class IMachineRegistry {
 	public static IMachine getEnchanter() {
 		return new IMachine(XUMachineEnchanter.INSTANCE);
 	}
-
-	@ZenGetter("generator_furnace")
-	public static IMachine getFurnaceGenerator() {
-		return new IMachine(XUMachineGenerators.FURNACE_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_survivalist")
-	public static IMachine getSurvivalistGenerator() {
-		return new IMachine(XUMachineGenerators.SURVIVALIST_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_culinary")
-	public static IMachine getCulinaryGenerator() {
-		return new IMachine(XUMachineGenerators.CULINARY_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_potion")
-	public static IMachine getPotionGenerator() {
-		return new IMachine(XUMachineGenerators.POTION_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_tnt")
-	public static IMachine getTntGenerator() {
-		return new IMachine(XUMachineGenerators.TNT_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_lava")
-	public static IMachine getLavaGenerator() {
-		return new IMachine(XUMachineGenerators.LAVA_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_pink")
-	public static IMachine getPinkGenerator() {
-		return new IMachine(XUMachineGenerators.PINK_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_netherstar")
-	public static IMachine getNetherstarGenerator() {
-		return new IMachine(XUMachineGenerators.NETHERSTAR_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_ender")
-	public static IMachine getEnderGenerator() {
-		return new IMachine(XUMachineGenerators.ENDER_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_redstone")
-	public static IMachine getRedstoneGenerator() {
-		return new IMachine(XUMachineGenerators.REDSTONE_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_overclock")
-	public static IMachine getOverclockGenerator() {
-		return new IMachine(XUMachineGenerators.OVERCLOCK_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_dragon")
-	public static IMachine getDragonGenerator() {
-		return new IMachine(XUMachineGenerators.DRAGON_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_ice")
-	public static IMachine getIceGenerator() {
-		return new IMachine(XUMachineGenerators.ICE_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_death")
-	public static IMachine getDeathGenerator() {
-		return new IMachine(XUMachineGenerators.DEATH_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_enchant")
-	public static IMachine getEnchantGenerator() {
-		return new IMachine(XUMachineGenerators.ENCHANT_GENERATOR);
-	}
-
-
-	@ZenGetter("generator_slime")
-	public static IMachine getSlimeGenerator() {
-		return new IMachine(XUMachineGenerators.SLIME_GENERATOR);
-	}
-
-
 }

@@ -58,6 +58,9 @@ dependencies {
 
     deobfCompile "slimeknights.mantle:Mantle:1.10.2-1.1.3.199"
     deobfCompile "slimeknights:TConstruct:1.10.2-2.6.1.464"
+    compileOnly files("./ThermalInnovation-1.12.2-0.3.6.1-universal.jar")
+    compileOnly files("./ThermalExpansion-1.12.2-5.5.7.1-universal.jar")
+    compileOnly files("./CoFHCore-1.12.2-4.6.6.1-universal.jar")
 }
 
 

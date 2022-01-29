@@ -247,12 +247,6 @@ public class BlockDrum extends XUBlockStatic {
 //				return 0.4F;
 				return 0.484375f;
 			}
-		},
-		DRUM_CREATIVE("creative", 10000) {
-			@Override
-			public TileDrum createTile() {
-				return new TileDrum.TankInf();
-			}
 		};
 
 		public final String texture;

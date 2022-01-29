@@ -8,6 +8,7 @@ import com.rwtema.extrautils2.blocks.XUTree;
 import com.rwtema.extrautils2.items.ItemIngredients;
 import com.rwtema.extrautils2.items.ItemLuxSaber;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 
 import java.util.Locale;
 
@@ -37,6 +38,5 @@ public class XU2Entries112 {
 	public static final XUTree tree = new TreeIronWoods();
 
 	public static void init() {
-
 	}
 }

@@ -24,7 +24,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.IRegistryDelegate;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.logging.log4j.LogManager;
 
+import java.lang.reflect.Field;
 import java.util.*;
 
 public class CompatHelper112 {
@@ -101,19 +103,37 @@ public class CompatHelper112 {
 	}
 
 	public static <T extends IForgeRegistryEntry.Impl<T>> T getPotionInput(PotionHelper.MixPredicate<T> predicate) {
-		Object input = predicate.input;
-		if (input instanceof IRegistryDelegate) {
-			return (T) ((IRegistryDelegate) input).get();
+		try {
+			Field f = predicate.getClass().getDeclaredField("field_185198_a");
+			Object input = f.get(predicate);
+
+			if (input == null) return null;
+
+			if (input instanceof IRegistryDelegate) {
+				return (T) ((IRegistryDelegate) input).get();
+			}
+			return (T) input;
+		} catch (NoSuchFieldException | IllegalAccessException ex) {
+			LogManager.getLogger().warn("com.rwtema.extrautils2.compatibility.CompatHelper112.getPotionInput error handled");
+			return null;
 		}
-		return (T) input;
 	}
 
 	public static <T extends IForgeRegistryEntry.Impl<T>> T getPotionOutput(PotionHelper.MixPredicate<T> predicate) {
-		Object output = predicate.output;
-		if (output instanceof IRegistryDelegate) {
-			return (T) ((IRegistryDelegate) output).get();
+		try {
+			Field f = predicate.getClass().getDeclaredField("field_185200_c");
+			Object output = f.get(predicate);
+
+			if (output == null) return null;
+
+			if (output instanceof IRegistryDelegate) {
+				return (T) ((IRegistryDelegate) output).get();
+			}
+			return (T) output;
+		} catch (NoSuchFieldException | IllegalAccessException ex) {
+			LogManager.getLogger().warn("com.rwtema.extrautils2.compatibility.CompatHelper112.getPotionInput error handled");
+			return null;
 		}
-		return (T) output;
 	}
 
 	public static <T extends IForgeRegistryEntry.Impl<T>> Pair<T, T> createLink(PotionHelper.MixPredicate<T> t) {

@@ -123,9 +123,8 @@ public class BlockTeleporter extends XUBlockStatic {
 
 	public enum Type {
 		OVERWORLD(null, false),
-		DEEP_DARK(XU2Entries.deep_dark, false),
+		DEEP_DARK(XU2Entries.deep_dark, false);
 		//		DREAM_WORLD(XU2Entries.dream_world),
-		SPECIAL_DIM(XU2Entries.specialdim, true);
 
 		@Nullable
 		public final DimensionEntry dimension;

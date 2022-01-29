@@ -1,6 +1,6 @@
 package com.rwtema.extrautils2.machine;
 
-import com.rwtema.extrautils2.compatibility.StackHelper;
+import  com.rwtema.extrautils2.compatibility.StackHelper;
 import com.rwtema.extrautils2.utils.blockaccess.BlockAccessEmpty;
 import com.rwtema.extrautils2.utils.blockaccess.BlockAccessSingle;
 import com.rwtema.extrautils2.utils.datastructures.ItemRef;

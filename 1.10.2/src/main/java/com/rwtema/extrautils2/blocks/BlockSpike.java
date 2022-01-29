@@ -49,8 +49,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class BlockSpike extends XUBlockStatic {
-	public static final DamageSource spike_creative = new DamageSource("spike_creative").setDamageBypassesArmor();
-
 	static final float bounds = 1 / 32F;
 	private static final String spikeDamageName = "spike";
 	public static final DamageSource spike = new DamageSource(spikeDamageName);

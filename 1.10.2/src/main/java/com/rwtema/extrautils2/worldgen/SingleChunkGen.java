@@ -38,7 +38,6 @@ public abstract class SingleChunkGen {
 		return isAir(chunk, pos.getX() + side.getFrontOffsetX(), pos.getY() + side.getFrontOffsetY(), pos.getZ() + side.getFrontOffsetZ());
 	}
 
-
 	public boolean isAir(Chunk chunk, int dx, int dy, int dz) {
 		BlockPos.MutableBlockPos pos = SingleChunkGen.mutableBlockPos.get();
 		pos.setPos(dx, dy, dz);

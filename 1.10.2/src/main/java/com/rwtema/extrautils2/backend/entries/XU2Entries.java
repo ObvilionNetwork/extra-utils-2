@@ -1,5 +1,6 @@
 package com.rwtema.extrautils2.backend.entries;
 
+import cofh.thermalinnovation.item.ItemDrill;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -20,7 +21,6 @@ import com.rwtema.extrautils2.dimensions.TeleportCapabilitiesUpdateHandler;
 import com.rwtema.extrautils2.dimensions.WorldWall;
 import com.rwtema.extrautils2.dimensions.deep_dark.TeleporterDeepDark;
 import com.rwtema.extrautils2.dimensions.deep_dark.WorldProviderDeepDark;
-import com.rwtema.extrautils2.dimensions.workhousedim.WorldProviderSpecialDim;
 import com.rwtema.extrautils2.entity.EntityBoomerang;
 import com.rwtema.extrautils2.eventhandlers.ProddingStickHandler;
 import com.rwtema.extrautils2.eventhandlers.RareSeedHandler;
@@ -96,28 +96,7 @@ public class XU2Entries {
 	public static final IItemStackMaker redstoneCrystal = ItemIngredients.Type.REDSTONE_CRYSTAL;
 
 	public static final IItemStackMaker stoneburnt = BlockDecorativeSolid.DecorStates.stoneburnt;
-	public static final ItemClassEntry<ItemSnowglobe> snowGlobe = new ItemClassEntry<ItemSnowglobe>(ItemSnowglobe.class) {
-		@Override
-		public void addRecipes() {
-			OreDictionary.registerOre("doorWood", Items.OAK_DOOR);
-			OreDictionary.registerOre("doorWood", Items.ACACIA_DOOR);
-			OreDictionary.registerOre("doorWood", Items.JUNGLE_DOOR);
-			OreDictionary.registerOre("doorWood", Items.SPRUCE_DOOR);
-			OreDictionary.registerOre("doorWood", Items.DARK_OAK_DOOR);
-			OreDictionary.registerOre("doorWood", Items.BIRCH_DOOR);
-			OreDictionary.registerOre("doorIron", Items.IRON_DOOR);
 
-			addShapeless("snow_globe", newStack(),
-					"blockGlass", "treeSapling", Items.SNOWBALL,
-					"doorWood", "logWood", "grass",
-					Items.ENDER_PEARL, "netherStar");
-		}
-
-		@Override
-		public void registerOres() {
-			OreDictionary.registerOre("magic_snow_globe", newStack(1, 1));
-		}
-	};
 	public static ItemEntry<ItemWateringCan> wateringCan = new ItemClassEntry<ItemWateringCan>(ItemWateringCan.class) {
 		@Override
 		public void addRecipes() {
@@ -628,11 +607,13 @@ public class XU2Entries {
 
 		@Override
 		public void addRecipes() {
-			addShaped("transfer_pipes", newStack(64), "SSS", "GRG",
-					"SSS", 'S',
-					new ItemStack(Blocks.STONE_SLAB), 'G',
-					"blockGlass", 'R',
-					"dustRedstone");
+			addShaped("transfer_pipes", newStack(8),
+					"SSS",
+					"GRG",
+					"SSS",
+					'S', new ItemStack(Blocks.STONE_SLAB),
+					'G', "blockGlass",
+					'R', "dustRedstone");
 		}
 	}.setItemBlockClass(ItemBlockPipe.class);
 	public static BlockEntry<BlockTransferHolder> holder = new BlockClassEntry<BlockTransferHolder>(BlockTransferHolder.class, TileTransferHolder.class) {
@@ -796,27 +777,30 @@ public class XU2Entries {
 		@Override
 		public void addRecipes() {
 			CraftingHelper.addShaped("transfer_node_items",
-					newStack(4, TRANSFER_NODE_ITEMS.ordinal()),
+					newStack(1, TRANSFER_NODE_ITEMS.ordinal()),
 					"RPR",
-					"SCS", 'P',
-					pipe, 'R',
-					"dustRedstone", 'S',
-					"stone", 'C', CHEST_WOOD);
+					"SCS",
+					'P', pipe,
+					'R', "dustRedstone",
+					'S', "stone",
+					'C', CHEST_WOOD);
 
 			CraftingHelper.addShaped("transfer_filter_items",
-					newStack(4, GrocketType.FILTER_ITEMS.ordinal()),
+					newStack(1, GrocketType.FILTER_ITEMS.ordinal()),
 					"RFR",
-					"SPS", 'P',
-					pipe, 'F',
-					filterItems, 'R',
-					"dustRedstone", 'S', "stone");
+					"SPS",
+					'P', pipe,
+					'F', filterItems,
+					'R', "dustRedstone",
+					'S', "stone");
 
-			CraftingHelper.addShapeless("transfer_pipe_filter", newStack(4, GrocketType.FILTER_PIPE.ordinal()),
-					pipe,
-					filterItems, "dustRedstone");
+			CraftingHelper.addShapeless("transfer_pipe_filter",
+					newStack(1, GrocketType.FILTER_PIPE.ordinal()),
+					pipe, filterItems,
+					"dustRedstone");
 
 			CraftingHelper.addShaped("transfer_node_fluids",
-					newStack(4, GrocketType.TRANSFER_NODE_FLUIDS.ordinal()),
+					newStack(1, GrocketType.TRANSFER_NODE_FLUIDS.ordinal()),
 					"RPR",
 					"SCS", 'P',
 					pipe, 'R',
@@ -1186,47 +1170,7 @@ public class XU2Entries {
 					"ingotIron", 'c',
 					newStack());
 
-			addShaped("generator_furnace",
-					value.createStack(XUMachineGenerators.FURNACE_GENERATOR),
-					"iii",
-					"ici",
-					"rpr", 'p',
-					Blocks.FURNACE, 'i',
-					"ingotIron", 'r',
-					"dustRedstone", 'c',
-					newStack());
-
-			addShaped("generator_survivalist",
-					value.createStack(XUMachineGenerators.SURVIVALIST_GENERATOR),
-					"iii",
-					"ici",
-					"rpr", 'p',
-					Blocks.FURNACE, 'i',
-					"cobblestone", 'r',
-					"dustRedstone", 'c',
-					"ingotIron");
-
-			createSubMachineRecipe(XUMachineGenerators.CULINARY_GENERATOR, Lists.newArrayList(Items.COOKED_PORKCHOP, Items.COOKED_BEEF, Items.COOKED_CHICKEN, Items.COOKED_MUTTON, Items.COOKED_FISH, Items.COOKED_RABBIT), Lists.newArrayList("cropWheat", "cropPotato", "cropCarrot"));
-			createSubMachineRecipe(XUMachineGenerators.POTION_GENERATOR, Items.BREWING_STAND, Items.BLAZE_ROD);
-			createSubMachineRecipe(XUMachineGenerators.TNT_GENERATOR, Blocks.TNT, Items.GUNPOWDER);
-			createSubMachineRecipe(XUMachineGenerators.LAVA_GENERATOR, Items.LAVA_BUCKET, "ingotGold");
-			createSubMachineRecipe(XUMachineGenerators.PINK_GENERATOR, new ItemStack(Blocks.WOOL, 1, EnumDyeColor.PINK.getMetadata()), new ItemStack(Items.DYE, 1, EnumDyeColor.PINK.getDyeDamage()));
-			createSubMachineRecipe(XUMachineGenerators.NETHERSTAR_GENERATOR, Items.NETHER_STAR, new ItemStack(Items.SKULL, 1, 1));
-			createSubMachineRecipe(XUMachineGenerators.ENDER_GENERATOR, Blocks.OBSIDIAN, Items.ENDER_PEARL);
-			createSubMachineRecipe(XUMachineGenerators.REDSTONE_GENERATOR, Blocks.REDSTONE_BLOCK, Items.REDSTONE, XUMachineGenerators.LAVA_GENERATOR);
-			createSubMachineRecipe(XUMachineGenerators.OVERCLOCK_GENERATOR, Blocks.GOLD_BLOCK, new ItemStack(Items.DYE, 1, EnumDyeColor.BLUE.getDyeDamage()));
-			createSubMachineRecipe(XUMachineGenerators.DRAGON_GENERATOR, Blocks.END_ROD, Blocks.PURPUR_BLOCK);
-			createSubMachineRecipe(XUMachineGenerators.ICE_GENERATOR, Blocks.ICE, Items.SNOWBALL);
-			createSubMachineRecipe(XUMachineGenerators.DEATH_GENERATOR, new ItemStack(Items.SPIDER_EYE), Lists.newArrayList(Items.BONE, Items.ROTTEN_FLESH));
-			createSubMachineRecipe(XUMachineGenerators.ENCHANT_GENERATOR, Blocks.ENCHANTING_TABLE, magical_wood);
-			createSubMachineRecipe(XUMachineGenerators.SLIME_GENERATOR, Blocks.SLIME_BLOCK, Items.SLIME_BALL);
-
 			MachineInit.addMachineRecipes();
-
-		}
-
-		private void createSubMachineRecipe(Machine generator, Object center, Object outside) {
-			createSubMachineRecipe(generator, center, outside, XUMachineGenerators.FURNACE_GENERATOR);
 		}
 
 		private void createSubMachineRecipe(Machine generator, Object center, Object outside, Machine furnaceGenerator) {
@@ -1279,24 +1223,28 @@ public class XU2Entries {
 	public static BlockClassEntry<BlockQuarryProxy> quarry_proxy = new BlockClassEntry<BlockQuarryProxy>(BlockQuarryProxy.class, TileQuarryProxy.class) {
 		@Override
 		public Set<Entry<?>> getDependencies() {
-			return ImmutableSet.of(quarry, specialdim);
+			return ImmutableSet.of(quarry);
 		}
 
 		@Override
 		public void addRecipes() {
-			addShaped("quarry_proxy", newStack(), "eme", "ede", "rrr", 'e', Blocks.END_STONE, 'm', Blocks.END_ROD, 'd', Items.DIAMOND_PICKAXE, 'r', stoneburnt);
+			addShaped("quarry_proxy", newStack(), "eme", "ede", "rrr",
+					'e', Blocks.END_STONE,
+					'm', Items.ENDER_EYE,
+					'd', Items.DIAMOND_PICKAXE,
+					'r', stoneburnt);
 		}
 	};
+
 	//	public static DimensionEntry dream_world = new DimensionEntry("dream_world", -22322, WorldProviderDreamWorld.class, false);
 	public static BlockClassEntry<BlockQuarry> quarry = new BlockClassEntry<BlockQuarry>(BlockQuarry.class, TileQuarry.class) {
 		@Override
 		public Set<Entry<?>> getDependencies() {
-			return ImmutableSet.of(quarry_proxy, specialdim);
+			return ImmutableSet.of(quarry_proxy);
 		}
 
 		@Override
 		public void addRecipes() {
-
 			PatternRecipe.register(
 					new String[][]{{"   ", " u ", "   "}, {" e ", "scn", " w "}, {"   ", " d ", "   "}},
 					ImmutableMap.<Character, Object>builder()
@@ -1310,8 +1258,17 @@ public class XU2Entries {
 							.build(),
 					newStack(), quarry_proxy.newStack()
 			);
+		}
 
-			addShaped("quarry_base", newStack(), "mem", "ede", "mem", 'm', Blocks.END_STONE, 'd', snowGlobe.isActive() ? "magic_snow_globe" : "netherStar", 'e', stoneburnt);
+		@Override
+		public void init() {
+			// drill works only after init
+			addShaped("quarry_base", newStack(), "mem", "cdc", "mam",
+					'm', simpleDecorative.newStack(1, 2),
+					'd', machineEntry.newStack(1, 0),
+					'e', ItemDrill.drillSignalum,
+					'c', decorativeSolidWood.newStack(1, 1),
+					'a', drum.newStack(1, 3));
 		}
 
 		@Nonnull
@@ -1321,14 +1278,7 @@ public class XU2Entries {
 
 		@Override
 		public void loadAdditionalConfig(Configuration config) {
-			WorldProviderSpecialDim.ALLOW_SPECIAL_DIMS = config.get(ConfigHelper.GAMEPLAY_CATEGORY, "Quantum Quarry: Enable Nether/End biome generation (has been buggy)", false).getBoolean();
-			TileQuarry.ENERGY_PER_OPERATION = config.get(ConfigHelper.ENERGY_CATEGORY, "Quantum Quarry: Base Energy Per Operation", 20000).getInt();
-		}
-	};
-	public static DimensionEntry specialdim = new DimensionEntry("ExtraUtils2_Quarry_Dim", -9999, WorldProviderSpecialDim.class, true) {
-		@Override
-		public Set<Entry<?>> getDependencies() {
-			return ImmutableSet.of(quarry_proxy, quarry);
+			TileQuarry.ENERGY_PER_OPERATION = config.get(ConfigHelper.ENERGY_CATEGORY, "Quantum Quarry: Base Energy Per Operation", 100000).getInt();
 		}
 	};
 	public static BlockEntry<BlockSpike> spike_wood = new BlockEntry<BlockSpike>("spike_wood") {
@@ -1548,18 +1498,15 @@ public class XU2Entries {
 			addShapeless("trash_chest", newStack(), CHEST_WOOD, XU2Entries.trashCan, "dustRedstone");
 		}
 	};
-	public static BlockClassEntry<BlockOpinium> openium = new BlockClassEntry<BlockOpinium>(BlockOpinium.class) {
-		@Override
-		public void addRecipes() {
-			BlockOpinium.addRecipes();
-		}
-	};
 	public static ItemClassEntry<ItemLawSword> lawSword = new ItemClassEntry<ItemLawSword>(ItemLawSword.class) {
 		@Override
 		public void addRecipes() {
-			if (openium.isActive()) {
-				addShaped("kikoku", newStack(), "i", "i", "s", 'i', openium.newStack(1, BlockOpinium.NUM_TIERS - 1), 's', Items.STICK);
-			}
+			addShaped("kikoku", newStack(),
+					"i",
+					"i",
+					"s",
+					'i', unstableIngots.newStack(1, 0),
+					's', Items.STICK);
 		}
 	};
 	public static VillagerEntrySimple shadyMerchant = new VillagerEntrySimple("shady_merchant") {
@@ -1615,17 +1562,14 @@ public class XU2Entries {
 	public static ItemClassEntry<ItemCompoundBow> compoundBow = new ItemClassEntry<ItemCompoundBow>(ItemCompoundBow.class) {
 		@Override
 		public void addRecipes() {
-			if (openium.isActive()) {
-				addShaped("compound_bow", newStack(), true, " iS", "s S", " iS", 'i', openium.newStack(1, BlockOpinium.NUM_TIERS - 1), 's', "ingotIron", 'S', "string");
-			}
+			addShaped("compound_bow", newStack(), true, " iS", "s S", " iS", 'i',
+					unstableIngots.newStack(1, 0), 's', "ingotIron", 'S', "string");
 		}
 	};
 	public static ItemClassEntry<ItemFireAxe> fireAxe = new ItemClassEntry<ItemFireAxe>(ItemFireAxe.class) {
 		@Override
 		public void addRecipes() {
-			if (openium.isActive()) {
-				addShaped("fire_axe", newStack(), true, "ii", "is", " s", 'i', openium.newStack(1, BlockOpinium.NUM_TIERS - 1), 's', Items.STICK);
-			}
+			addShaped("fire_axe", newStack(), true, "ii", "is", " s", 'i', unstableIngots.newStack(1, 0), 's', Items.STICK);
 		}
 	};
 

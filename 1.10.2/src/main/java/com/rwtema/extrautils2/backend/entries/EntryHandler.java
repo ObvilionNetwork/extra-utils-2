@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.rwtema.extrautils2.achievements.AchievementHelper;
 import com.rwtema.extrautils2.crafting.CraftingHelper;
 import com.rwtema.extrautils2.modcompat.ModCompatibility;
+import com.rwtema.extrautils2.quarry.QuarryItemsProvider;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModAPIManager;
@@ -73,7 +74,6 @@ public class EntryHandler {
 		}
 
 		AchievementHelper.bake();
-
 	}
 
 	public static void init() {
@@ -83,6 +83,8 @@ public class EntryHandler {
 	}
 
 	public static void postInit() {
+		QuarryItemsProvider.loadConfig();
+
 		for (Entry entry : activeEntries) {
 			entry.postInit();
 		}
