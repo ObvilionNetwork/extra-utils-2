@@ -46,7 +46,7 @@ public class LightingTransformer implements IClassTransformer {
 					ClassTransformerHandler.logger.info("Chunk Failed - " + getLightSubtractedName + " " + worldObjFieldName);
 					return bytes;
 				}
-				MethodNode methodNode = new MethodNode(m.access, getLightSubtractedName, m.desc, m.signature, m.exceptions.toArray(new String[m.exceptions.size()]));
+				MethodNode methodNode = new MethodNode(m.access, getLightSubtractedName, m.desc, m.signature, m.exceptions.toArray(new String[0]));
 				methodNode.visitCode();
 				methodNode.visitVarInsn(ALOAD, 0);
 				methodNode.visitFieldInsn(GETFIELD, "net/minecraft/world/chunk/Chunk", worldObjFieldName, "Lnet/minecraft/world/World;");
@@ -100,7 +100,7 @@ public class LightingTransformer implements IClassTransformer {
 					ClassTransformerHandler.logger.info("Chunk Failed - " + getLightForExtName + " " + worldObjFieldName);
 					return bytes;
 				}
-				MethodNode methodNode = new MethodNode(m.access, getLightForExtName, m.desc, m.signature, m.exceptions.toArray(new String[m.exceptions.size()]));
+				MethodNode methodNode = new MethodNode(m.access, getLightForExtName, m.desc, m.signature, m.exceptions.toArray(new String[0]));
 				methodNode.visitCode();
 				methodNode.visitVarInsn(ALOAD, 0);
 				methodNode.visitFieldInsn(GETFIELD, "net/minecraft/world/ChunkCache", worldObjFieldName, "Lnet/minecraft/world/World;");

@@ -942,7 +942,7 @@ public abstract class TileMachine extends TilePower implements ITickable, IDynam
 		}
 	}
 
-	public abstract class ComponentHandler<T> implements INBTSerializable<NBTTagCompound> {
+	public abstract static class ComponentHandler<T> implements INBTSerializable<NBTTagCompound> {
 		public HashMap<String, T> contents = new HashMap<>();
 
 		@Override

@@ -37,7 +37,7 @@ public abstract class UnorderedPair<T> {
 
 			Unary<?> unary = (Unary<?>) o;
 
-			return key != null ? key.equals(unary.key) : unary.key == null;
+			return Objects.equals(key, unary.key);
 		}
 
 		@Override

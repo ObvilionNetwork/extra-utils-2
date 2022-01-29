@@ -39,6 +39,6 @@ public class FlatStoneHandler extends ChunkDataModuleManager<List<FlatStoneHandl
 
 	}
 
-	public class FlatStone {
+	public static class FlatStone {
 	}
 }

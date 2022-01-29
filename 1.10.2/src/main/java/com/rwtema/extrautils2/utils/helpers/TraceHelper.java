@@ -29,7 +29,7 @@ public class TraceHelper {
 
 	public void log(StackTraceElement[] stackTrace) {
 		ArrayList<StackTraceElement> stackTraceElements = Lists.newArrayList(stackTrace);
-		elements.merge(stackTraceElements, 1, (integer, integer2) -> integer + integer2);
+		elements.merge(stackTraceElements, 1, Integer::sum);
 		n = n + 1;
 		if ((n % 1024) == 0) {
 			report();

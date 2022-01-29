@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BoxMimic extends Box {
-	public static ThreadLocal<BlockAccessMimic> blockAccessMimicThreadLocal = ThreadLocal.withInitial(() -> new BlockAccessMimic());
+	public static ThreadLocal<BlockAccessMimic> blockAccessMimicThreadLocal = ThreadLocal.withInitial(BlockAccessMimic::new);
 
 
 	IBlockAccess world;

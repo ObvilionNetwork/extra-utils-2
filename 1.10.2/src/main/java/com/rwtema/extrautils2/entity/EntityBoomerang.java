@@ -477,7 +477,6 @@ public class EntityBoomerang extends Entity implements IEntityAdditionalSpawnDat
 
 		ItemStack addingStack = adding.getItem();
 		ItemStack currentStack = current.getItem();
-		if (StackHelper.isNull(addingStack) || StackHelper.isNull(currentStack)) return true;
 
 		if (!ItemHandlerHelper.canItemStacksStack(addingStack, currentStack)) {
 			return false;
@@ -621,7 +620,7 @@ public class EntityBoomerang extends Entity implements IEntityAdditionalSpawnDat
 		flyTime = additionalData.readInt();
 	}
 
-    public class DamageSourceBoomerang extends EntityDamageSourceIndirect {
+    public static class DamageSourceBoomerang extends EntityDamageSourceIndirect {
 
 		public DamageSourceBoomerang(EntityBoomerang indirectEntityIn, Entity owner) {
 			super("boomerang", indirectEntityIn, owner);

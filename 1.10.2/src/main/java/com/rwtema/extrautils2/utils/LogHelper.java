@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 public class LogHelper {
-	private static final ThreadLocal<HashSet<String>> one_time_strings_set = ThreadLocal.withInitial(() -> new HashSet<>());
+	private static final ThreadLocal<HashSet<String>> one_time_strings_set = ThreadLocal.withInitial(HashSet::new);
 	private static final ArrayList<String> one_time_strings = new ArrayList<>();
 	public static Logger logger = LogManager.getLogger(ExtraUtils2.MODID);
 	public static boolean isDeObf = false;

@@ -53,7 +53,7 @@ public class Grid {
 
 	}
 
-	public class TileSet extends TLinkedHashSet<TileGridRef<XUTileGrid>> {
+	public static class TileSet extends TLinkedHashSet<TileGridRef<XUTileGrid>> {
 
 	}
 }

@@ -72,11 +72,11 @@ public class HamHelper {
 		boolean nobler;
 	}
 
-	public abstract class Sea<T> implements Iterable<T> {
+	public abstract static class Sea<T> implements Iterable<T> {
 
 	}
 
-	public class Trouble {
+	public static class Trouble {
 
 	}
 }

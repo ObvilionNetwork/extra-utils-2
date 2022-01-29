@@ -60,7 +60,7 @@ public abstract class PlayerSpecificCrafting implements RecipeCompat, IRecipeInf
 		for (ItemStack itemStack : recipe.getRemainingItems(inv)) {
 			stacks.add(itemStack);
 		}
-		return stacks.toArray(new ItemStack[stacks.size()]);
+		return stacks.toArray(new ItemStack[0]);
 	}
 
 	@Override

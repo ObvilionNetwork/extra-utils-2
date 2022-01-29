@@ -14,7 +14,7 @@ import java.util.Random;
 
 public abstract class SingleChunkGen {
 
-	static ThreadLocal<BlockPos.MutableBlockPos> mutableBlockPos = ThreadLocal.withInitial(() -> new BlockPos.MutableBlockPos());
+	static ThreadLocal<BlockPos.MutableBlockPos> mutableBlockPos = ThreadLocal.withInitial(BlockPos.MutableBlockPos::new);
 	static IBlockState air = Blocks.AIR.getDefaultState();
 	public final int version;
 	public final String name;

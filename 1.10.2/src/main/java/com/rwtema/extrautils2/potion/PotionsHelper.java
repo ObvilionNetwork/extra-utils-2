@@ -27,10 +27,6 @@ public class PotionsHelper {
 	public final static List<ItemStack> lingering_potions = new ArrayList<>();
 	public final static List<ItemStack> potions = new ArrayList<>();
 
-	static {
-
-	}
-
 	public static void addSimplePotionKeys(String key, String name) {
 		Lang.translate("effect." + key, "" + name);
 		Lang.translate("potion.effect." + key, "Potion of " + name);

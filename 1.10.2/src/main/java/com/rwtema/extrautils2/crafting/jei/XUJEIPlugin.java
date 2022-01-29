@@ -310,7 +310,7 @@ public class XUJEIPlugin extends BlankModPlugin implements IModPlugin {
 		}
 	}
 
-	public class SubType implements ISubtypeRegistry.ISubtypeInterpreter, Function<ItemStack, String> {
+	public static class SubType implements ISubtypeRegistry.ISubtypeInterpreter, Function<ItemStack, String> {
 		HashSet<String> types;
 
 		@Nonnull
